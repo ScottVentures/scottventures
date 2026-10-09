@@ -76,3 +76,35 @@ the policies in `schema.sql` allow.
 Any static server works, e.g. `npx serve .` or `python -m http.server`, then open
 the printed address. (The old `cd Backend && npm start` server still runs for
 offline development and the Python tools, but the site no longer depends on it.)
+
+## Security & anti-bot (recommended before going public)
+
+A static site's anon key is public, so protection has to live in Supabase, not just in the browser.
+
+1. **Rate limits (server-side):** after `schema.sql`, run [`hardening.sql`](hardening.sql) in the SQL Editor. It limits, per visitor/IP:
+   contact 3/hour, newsletter 5/hour, comments 8/10 min, forum posts 5/hour, messages 40/10 min, reactions 60/10 min.
+2. **CAPTCHA on accounts (free, Cloudflare Turnstile):**
+   - Cloudflare dashboard → *Turnstile* → add your site (your GitHub Pages host and later your domain) → copy the **Site key** and **Secret key**.
+   - Supabase → *Authentication → Attack Protection* → enable CAPTCHA, provider *Turnstile*, paste the **Secret key**.
+   - Paste the **Site key** into `turnstileSiteKey` in `sources/js/supabase-config.js`. The widget then appears on register, login, forgot-password and contact forms.
+   - Note: with CAPTCHA on, "change password" and "delete account" ask the user to log in again first.
+3. **Also in Supabase → Authentication:** keep *Confirm email* ON, set a minimum password length of 8+, and keep the default auth rate limits.
+4. **Browser-side defences** (`sources/js/sv-shield.js`, already on every page): hidden honeypot field, minimum fill-time check, anti-framing (clickjacking), referrer policy.
+5. **Never** commit the `service_role` key. Only the Edge Function below uses it (Supabase injects it automatically).
+
+### AI chatbot (optional)
+
+The floating assistant (`sources/js/sv-chat.js`) works out of the box by answering from your articles and pages. To make it a real AI assistant:
+
+```
+npm i -g supabase            # or use npx supabase
+supabase login
+supabase link --project-ref <your-project-ref>
+supabase functions deploy chat --no-verify-jwt
+supabase secrets set ANTHROPIC_API_KEY=sk-ant-... ALLOWED_ORIGINS=https://<your-github-pages-host>,https://yourdomain.com
+```
+
+The key stays on the server. The function limits each visitor to 20 questions / 10 minutes, caps the site at 500 questions/day (`CHAT_DAILY_CAP`), only accepts requests from `ALLOWED_ORIGINS`, and is instructed to stay on-topic and never invent prices or contact details. If the function isn't deployed or is unreachable, the widget falls back to the built-in assistant automatically. Set `chatbotEnabled: false` in the config to remove the widget.
+
+### What can't be prevented
+Anything a browser can read (your public articles) can be scraped. Rate limits and CAPTCHAs stop abuse of forms, accounts and the chatbot, but not someone downloading public pages. If scraping becomes a problem, put the domain behind Cloudflare (free): *Bot Fight Mode*, rate-limiting rules and security headers are one click there, and GitHub Pages cannot set HTTP headers itself.

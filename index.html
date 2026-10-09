@@ -21,6 +21,9 @@
       <script src="sources/js/vendor/supabase.js"></script>
       <script src="sources/js/supabase-config.js"></script>
       <script src="sources/js/supabase-adapter.js"></script>
+      <script src="sources/js/sv-shield.js"></script>
+      <script src="sources/js/sv-footer.js" defer></script>
+      <script src="sources/js/sv-chat.js" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
         crossorigin="anonymous"></script>
     <!-- Addsence -->
@@ -93,42 +96,43 @@
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
-    <div class="banner header-text">
-      <div class="owl-banner owl-carousel">
-        <div class="banner-item banner-item-01">
-          <div class="text-content">
-            <h4>WELCOME TO ScottVentures</h4>
-            <h2>SERVING YOU WITH THE BEST</h2>
+    <section class="hm-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <span class="hm-eyebrow">Tech made clear</span>
+            <h1>Learn technology the <em>clear</em> way.</h1>
+            <p>Short, direct articles, hands-on tutorials and study materials &mdash; plus practical ICT services from Mombasa, Kenya. No padded intros. No filler.</p>
+            <div class="hm-cta">
+              <a href="products.html" class="hm-btn">Read the articles</a>
+              <a href="tutorials.html" class="hm-btn hm-btn-ghost">Browse tutorials</a>
+            </div>
+            <ul class="hm-trust">
+              <li>3&ndash;6 minute reads</li><li>Free to read</li><li>Open to guest posts</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 d-none d-lg-block">
+            <div class="hm-stack">
+              <a href="Materials/deep-learning.html" class="hm-c3"><img src="sources/images/covers/materials/deep-learning.webp" alt="Learning material: Deep Learning" width="1200" height="630"></a>
+              <a href="Tutorials/react-basics.html" class="hm-c2"><img src="sources/images/covers/tutorials/react-basics.webp" alt="Tutorial: Mastering React" width="1200" height="630"></a>
+              <a href="Articles/article1.html" class="hm-c1"><img src="sources/images/covers/articles/article1.webp" alt="Article: Unleashing Your Creativity" width="1200" height="630"></a>
+            </div>
           </div>
         </div>
-        <div class="banner-item banner-item-02">
-          <div class="text-content">
-            <h4>WELCOME TO ScottVentures</h4>
-            <h2>TOP CLASS ARTICLES</h2>
-          </div>
-        </div>
-        <div class="banner-item banner-item-03">
-          <div class="text-content">
-            <h4>WELCOME TO ScottVentures</h4>
-            <h2>HELPFULL TUTORIALS</h2>
-          </div>
-        </div>
-        <!-- Video slide (disabled until a showreel exists): add sources/videos/showreel.mp4, then move the markup below back into the carousel.
-        <div class="banner-item banner-item-video">
-          <video class="banner-video" muted playsinline preload="metadata" poster="sources/images/slide_01.jpg">
-            <source src="sources/videos/showreel.mp4" type="video/mp4">
-          </video>
-          <button type="button" class="banner-sound-toggle is-muted" title="Toggle sound" aria-label="Toggle video sound">
-            <i class="fa fa-volume-off"></i>
-          </button>
-          <div class="text-content">
-            <h4>WELCOME TO ScottVentures</h4>
-            <h2>SEE IT IN ACTION</h2>
-          </div>
-        </div>
-        -->
       </div>
-    </div>
+    </section>
+
+    <section class="hm-pillars">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-lg-3 mb-3"><a class="hm-pill" href="products.html"><span class="hm-pi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 9h8M8 13h6"/></svg></span><b>Articles</b><small>Hardware &amp; coding explained</small></a></div>
+          <div class="col-6 col-lg-3 mb-3"><a class="hm-pill" href="tutorials.html"><span class="hm-pi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><b>Tutorials</b><small>Step-by-step, hands-on</small></a></div>
+          <div class="col-6 col-lg-3 mb-3"><a class="hm-pill" href="learning-materials.html"><span class="hm-pi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><b>Learning materials</b><small>Organised study resources</small></a></div>
+          <div class="col-6 col-lg-3 mb-3"><a class="hm-pill" href="contact.html"><span class="hm-pi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><b>ICT services</b><small>Practical help, on request</small></a></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Banner Ends Here -->
 
     <div class="latest-products">
@@ -291,38 +295,45 @@
     </div>
  <!-- Learning Ends Here -->
     
-    <div class="best-features">
+    <div class="best-features hm-about">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>About ScottVentures</h2>
-            </div>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4">
+            <span class="hm-eyebrow hm-eyebrow-red">About ScottVentures</span>
+            <h2 class="hm-h2">Short, direct explainers &mdash; no fluff</h2>
+            <p class="hm-p">ScottVentures started as a running list of "wait, how does that actually work?" moments. Every post is written to leave you with something you can actually use, in five minutes or less.</p>
+            <ul class="hm-checks">
+              <li>Hardware explained clearly</li>
+              <li>Coding tricks worth remembering</li>
+              <li>Hands-on tutorials and curated learning materials</li>
+              <li>No padded intros, no filler</li>
+            </ul>
+            <a href="about.html" class="hm-btn">More about us</a>
           </div>
-          <div class="col-md-6">
-            <div class="left-content">
-              <h4>Short, direct explainers — no fluff</h4>
-              <p>ScottVentures started as a running list of "wait, how does that actually work?" moments. Every post is written to leave you with something you can actually use, in five minutes or less.</p>
-              <ul class="featured-list">
-                <li><a href="about.html">Hardware explained clearly</a></li>
-                <li><a href="about.html">Coding tricks worth remembering</a></li>
-                <li><a href="tutorials.html">Hands-on tutorials</a></li>
-                <li><a href="learning-materials.html">Curated learning materials</a></li>
-                <li><a href="about.html">No padded intros, no filler</a></li>
-                <li><a href="contact.html">Open to guest post pitches</a></li>
-              </ul>
-              <a href="about.html" class="filled-button">Read More</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="right-image">
-              <img src="sources/images/feature-image.jpg" alt="Laptop and notebook on a desk, representing the ScottVentures writing process">
+          <div class="col-lg-6 mb-4">
+            <div class="row">
+              <div class="col-sm-6 mb-3"><div class="hm-card"><span class="hm-pi">&#9201;</span><h4>Respect your time</h4><p>3&ndash;6 minute reads that get to the point.</p></div></div>
+              <div class="col-sm-6 mb-3"><div class="hm-card"><span class="hm-pi">&#128736;</span><h4>Hands-on</h4><p>Tutorials you can follow and actually finish.</p></div></div>
+              <div class="col-sm-6 mb-3"><div class="hm-card"><span class="hm-pi">&#127760;</span><h4>Rooted in Mombasa</h4><p>Written locally, useful everywhere.</p></div></div>
+              <div class="col-sm-6 mb-3"><div class="hm-card"><span class="hm-pi">&#9993;</span><h4>Open to pitches</h4><p>Have an idea? Send a guest post proposal.</p></div></div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <section class="hm-ict">
+      <div class="container">
+        <div class="hm-head"><span class="hm-eyebrow hm-eyebrow-red">ICT services</span><h2 class="hm-h2">Need a hand with technology?</h2><p class="hm-p">Beyond the articles, we help individuals and small businesses get things working. Tell us what you need and we'll reply with next steps.</p></div>
+        <div class="row">
+          <div class="col-6 col-lg-3 mb-3"><div class="hm-card"><h4>Devices &amp; support</h4><p>Troubleshooting and set-up for computers and phones.</p></div></div>
+          <div class="col-6 col-lg-3 mb-3"><div class="hm-card"><h4>Networking</h4><p>Wi-Fi and office network set-up and fixes.</p></div></div>
+          <div class="col-6 col-lg-3 mb-3"><div class="hm-card"><h4>Websites &amp; tools</h4><p>Simple sites and digital tools for your business.</p></div></div>
+          <div class="col-6 col-lg-3 mb-3"><div class="hm-card"><h4>Training</h4><p>Practical guidance so your team can do it themselves.</p></div></div>
+        </div>
+        <div class="text-center mt-3"><a href="contact.html" class="hm-btn">Request a service</a></div>
+      </div>
+    </section>
 
     <div class="call-to-action">
       <div class="container">
@@ -345,6 +356,59 @@
       </div>
     </div>
 
+<style>
+.hm-hero{background:radial-gradient(1200px 500px at 85% -10%,#4a2230 0%,transparent 60%),linear-gradient(135deg,#1b1d24,#2a2e3a);color:#fff;padding:140px 0 100px;overflow:hidden}
+.hm-hero h1{font-size:3.1rem;font-weight:700;line-height:1.15;margin:16px 0 18px;color:#fff;text-transform:none;letter-spacing:0}
+.hm-hero h1 em{font-style:normal;color:#ff6b66}
+.hm-hero p{color:#c4c9d6;font-size:1.08rem;line-height:1.7;max-width:540px}
+.hm-eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ffb3b0;background:rgba(255,255,255,.1);padding:6px 14px;border-radius:50px}
+.hm-eyebrow-red{color:#d93a35;background:#fdeceb}
+.hm-cta{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 22px}
+.hm-btn{display:inline-block;background:#d93a35;color:#fff;border:2px solid #d93a35;border-radius:10px;padding:13px 28px;font-weight:600;text-decoration:none;transition:all .2s}
+.hm-btn:hover{background:#b92d29;border-color:#b92d29;color:#fff;transform:translateY(-1px);text-decoration:none}
+.hm-btn-ghost{background:transparent;border-color:rgba(255,255,255,.45)}
+.hm-btn-ghost:hover{background:#fff;border-color:#fff;color:#1b1d24}
+.hm-trust{list-style:none;display:flex;gap:22px;flex-wrap:wrap;padding:0;margin:0;color:#9ea5b6;font-size:.88rem}
+.hm-trust li:before{content:"\2713";color:#6fd89a;margin-right:7px;font-weight:700}
+.hm-stack{position:relative;height:380px}
+.hm-stack a{position:absolute;width:78%;border-radius:16px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45);transition:transform .3s}
+.hm-stack img{display:block;width:100%;height:auto}
+.hm-c1{left:0;top:150px;z-index:3;transform:rotate(-3deg)}
+.hm-c2{left:14%;top:75px;z-index:2;transform:rotate(2deg)}
+.hm-c3{left:22%;top:0;z-index:1;transform:rotate(6deg)}
+.hm-stack a:hover{transform:translateY(-6px) rotate(0)}
+.hm-pillars{margin-top:-44px;position:relative;z-index:5}
+.hm-pill{display:block;background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(30,50,90,.12);padding:22px;text-decoration:none;height:100%;transition:transform .2s,box-shadow .2s}
+.hm-pill:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(30,50,90,.18);text-decoration:none}
+.hm-pi{width:48px;height:48px;border-radius:13px;background:#fdeceb;color:#d93a35;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:1.3rem}
+.hm-pill b{display:block;color:#1e2430;font-size:1rem}.hm-pill small{color:#778;font-size:.82rem}
+.latest-products{padding:70px 0 10px!important}
+.latest-products .section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px;padding-bottom:14px;border-bottom:2px solid #eef0f5;position:relative}
+.latest-products .section-heading:after{content:"";position:absolute;left:0;bottom:-2px;width:70px;height:2px;background:#d93a35}
+.latest-products .section-heading h2,.latest-products .section-heading i,.latest-products .section-heading strong{font-style:normal!important;font-weight:700;font-size:1.7rem;color:#1e2430;margin:0}
+.latest-products .section-heading .btn{background:transparent!important;border:2px solid #d93a35!important;color:#d93a35!important;border-radius:10px;font-weight:600;font-size:.85rem;padding:8px 18px;text-transform:none}
+.latest-products .section-heading .btn:hover{background:#d93a35!important;color:#fff!important}
+.latest-products .product-item{border-radius:14px;overflow:hidden;box-shadow:0 6px 22px rgba(30,50,90,.08);transition:transform .2s,box-shadow .2s;border:0}
+.latest-products .product-item:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(30,50,90,.16)}
+.hm-about{padding:70px 0 20px!important;background:#f6f8fc!important;margin-top:50px}
+.hm-h2{font-weight:700;color:#1e2430;font-size:2rem;margin:14px 0 14px;line-height:1.25}
+.hm-p{color:#556;line-height:1.75}
+.hm-checks{list-style:none;padding:0;margin:18px 0 26px}
+.hm-checks li{padding:6px 0 6px 30px;position:relative;color:#334}
+.hm-checks li:before{content:"\2713";position:absolute;left:0;top:6px;width:20px;height:20px;border-radius:50%;background:#e4f5ea;color:#1e8e3e;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.hm-card{background:#fff;border-radius:14px;box-shadow:0 6px 22px rgba(30,50,90,.08);padding:22px;height:100%}
+.hm-card h4{font-size:1rem;font-weight:700;color:#1e2430;margin:0 0 6px}.hm-card p{margin:0;color:#667;font-size:.88rem}
+.hm-ict{padding:60px 0 50px;background:#f6f8fc}
+.hm-head{text-align:center;max-width:620px;margin:0 auto 34px}
+.call-to-action{background:linear-gradient(135deg,#22252d,#3a3f4d)!important;color:#fff;padding:56px 0!important;margin:0!important}
+.call-to-action .inner-content{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+.call-to-action h4,.call-to-action h4 em,.call-to-action p{color:#fff!important}
+.call-to-action p{color:#d6d9e0!important}
+.call-to-action .filled-button{border-radius:10px;border:2px solid #fff;background:#fff;color:#d93a35}
+.call-to-action .filled-button+.filled-button{background:transparent;color:#fff}
+@media(max-width:991px){.hm-hero{padding:120px 0 90px}.hm-hero h1{font-size:2.3rem}}
+@media(max-width:575px){.hm-hero h1{font-size:1.9rem}.latest-products .section-heading{flex-direction:column;align-items:flex-start}}
+</style>
 <!-- Footer -->
     <div class="footer-main">
       <div class="container">

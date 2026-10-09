@@ -19,5 +19,15 @@ window.SV_SUPABASE = {
   // Leave empty to show a "coming soon" notice on those tools. Once you deploy the
   // services somewhere (with CORS allowing your site), put their base URL here,
   // e.g. 'https://tools.yourdomain.com'.
-  toolsApiBase: ''
+  toolsApiBase: '',
+
+  // Optional anti-bot: Cloudflare Turnstile SITE key (public). Free at
+  // https://dash.cloudflare.com -> Turnstile. Also paste the SECRET key into
+  // Supabase -> Authentication -> Attack Protection -> CAPTCHA. Leave empty to disable.
+  turnstileSiteKey: '',
+
+  // Optional AI chatbot. Deploy supabase/functions/chat (see supabase/README.md);
+  // it is reached at <url>/functions/v1/chat. Leave false to use the built-in
+  // help assistant, which answers from the site's own articles and pages.
+  chatbotEnabled: true
 };

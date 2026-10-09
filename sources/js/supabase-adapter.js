@@ -66,12 +66,16 @@
     return m ? '.' + m[1].toLowerCase() : (fallback || '');
   }
   // Map a Supabase/PostgREST error to an HTTP-ish response.
+  var CAPTCHA_REAUTH = 'For your security, please log out, log in again and then repeat this action.';
+  function cap(id) { return window.svShield ? window.svShield.captchaToken(id) : undefined; }
+
   function dbError(err, fallback) {
     var msg = (err && err.message) || fallback || 'Something went wrong. Please try again.';
     var status = 400;
     if (/failed to fetch|networkerror|load failed/i.test(msg)) {
       return fail(503, "Couldn't reach the database. Check your connection and try again.");
     }
+    if (err && err.code === 'P0429') status = 429;
     if (err && (err.code === '42501' || /row-level security|permission denied|Admin account required/i.test(msg))) status = 403;
     if (/not logged in|jwt/i.test(msg)) status = 401;
     if (err && err.code === 'PGRST116') status = 404;
@@ -133,7 +137,7 @@
       }
       return client().auth.signUp({
         email: email, password: pw,
-        options: { data: { first_name: first, last_name: last }, emailRedirectTo: SITE_ROOT + 'Account/login.html' }
+        options: { data: { first_name: first, last_name: last }, emailRedirectTo: SITE_ROOT + 'Account/login.html', captchaToken: cap('registerForm') }
       }).then(function (r) {
         if (r.error) {
           if (/already|registered/i.test(r.error.message)) return fail(409, 'An account with that email already exists.');
@@ -153,7 +157,7 @@
     login: function (b) {
       var email = str(b.email).trim().toLowerCase(), pw = str(b.password);
       if (!email || !pw) return Promise.resolve(fail(400, 'Incorrect email or password.'));
-      return client().auth.signInWithPassword({ email: email, password: pw }).then(function (r) {
+      return client().auth.signInWithPassword({ email: email, password: pw, options: { captchaToken: cap('loginForm') } }).then(function (r) {
         if (r.error) {
           if (/confirm/i.test(r.error.message)) return fail(401, 'Please confirm your email first — check your inbox for the link.');
           return fail(401, 'Incorrect email or password.');
@@ -230,7 +234,7 @@
         if (next.length < 8 || next.length > 200) return fail(400, 'New password must be at least 8 characters.');
         var c = client();
         return c.auth.signInWithPassword({ email: me.user.email, password: cur }).then(function (r) {
-          if (r.error) return fail(401, 'Current password is incorrect.');
+          if (r.error) return fail(401, /captcha/i.test(r.error.message) ? CAPTCHA_REAUTH : 'Current password is incorrect.');
           return c.auth.updateUser({ password: next }).then(function (u) {
             if (u.error) return fail(400, u.error.message);
             return c.auth.signOut({ scope: 'others' }).then(function () { return json(200, { ok: true, message: 'Password updated.' }); });
@@ -241,7 +245,7 @@
     forgotPassword: function (b) {
       var email = str(b.email).trim().toLowerCase();
       if (!EMAIL_RE.test(email)) return Promise.resolve(fail(400, 'Enter a valid email address.'));
-      return client().auth.resetPasswordForEmail(email, { redirectTo: SITE_ROOT + 'Account/reset-password.html?token=supabase' }).then(function () {
+      return client().auth.resetPasswordForEmail(email, { redirectTo: SITE_ROOT + 'Account/reset-password.html?token=supabase', captchaToken: cap('forgotPasswordForm') }).then(function () {
         return json(200, { ok: true, message: "If an account exists for that email, we've sent a reset link to it." });
       });
     },
@@ -311,7 +315,7 @@
         if (!me) return NOT_LOGGED_IN();
         var c = client();
         return c.auth.signInWithPassword({ email: me.user.email, password: str(b.password) }).then(function (r) {
-          if (r.error) return fail(401, 'Incorrect password.');
+          if (r.error) return fail(401, /captcha/i.test(r.error.message) ? CAPTCHA_REAUTH : 'Incorrect password.');
           return c.rpc('delete_my_account').then(function (d) {
             if (d.error) return fail(400, d.error.message);
             return c.auth.signOut({ scope: 'local' }).then(function () { return json(200, { ok: true }); });
