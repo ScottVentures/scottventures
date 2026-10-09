@@ -1,0 +1,23 @@
+{
+  "name": "scottventures",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ScottVentures — the main site (Backend/) plus its sub-sites (scottpdf-src/, scottimg-src/). Run `npm install` here once to install dependencies for all of them.",
+  "workspaces": [
+    "Backend",
+    "scottpdf-src",
+    "scottimg-src"
+  ],
+  "scripts": {
+    "start": "npm run start --workspace=Backend",
+    "dev:backend": "npm run dev --workspace=Backend",
+    "dev:scottpdf": "npm run dev --workspace=scottpdf-src",
+    "dev:scottimg": "npm run dev --workspace=scottimg-src",
+    "build:scottpdf": "npm run build --workspace=scottpdf-src",
+    "build:scottimg": "npm run build --workspace=scottimg-src",
+    "build": "npm run build:scottpdf && npm run build:scottimg"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

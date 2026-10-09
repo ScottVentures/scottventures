@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>ScottVentures</title>
+  <link>https://scottventures.github.io/scottventures/</link>
+  <description>Short, direct explainers on hardware, coding tricks, and hands-on tutorials.</description>
+  <item>
+    <title>Real-Time Apps with WebSockets</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/websockets.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/websockets.html</guid>
+    <description>How WebSockets differ from HTTP requests, and how to build a simple real-time chat feature with them.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/websockets.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:50 GMT</pubDate>
+  </item>
+  <item>
+    <title>Mastering Vue.js</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/vue-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/vue-basics.html</guid>
+    <description>A hands-on introduction to Vue.js — reactive data, components, and the directives that make templates come alive.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/vue-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:50 GMT</pubDate>
+  </item>
+  <item>
+    <title>TypeScript for JavaScript Developers</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/typescript-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/typescript-basics.html</guid>
+    <description>The TypeScript features that pay off immediately for a working JavaScript developer — types, interfaces, and generics.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/typescript-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:50 GMT</pubDate>
+  </item>
+  <item>
+    <title>Testing JavaScript with Jest</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/testing-with-jest.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/testing-with-jest.html</guid>
+    <description>Write your first unit tests with Jest — assertions, mocking, and structuring test files so they stay useful.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/testing-with-jest.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:50 GMT</pubDate>
+  </item>
+  <item>
+    <title>State Management with Redux</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/state-management-redux.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/state-management-redux.html</guid>
+    <description>Actions, reducers, and the store — how Redux manages application state, and when you actually need it.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/state-management-redux.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:50 GMT</pubDate>
+  </item>
+  <item>
+    <title>SQL Joins, Actually Explained</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/sql-joins.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/sql-joins.html</guid>
+    <description>INNER, LEFT, RIGHT, and FULL joins explained with concrete examples, so you stop guessing which one you need.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/sql-joins.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:49 GMT</pubDate>
+  </item>
+  <item>
+    <title>Building Your First GraphQL API</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/rest-vs-graphql.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/rest-vs-graphql.html</guid>
+    <description>A hands-on introduction to GraphQL — schemas, resolvers, and how it differs from a REST endpoint in practice.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/rest-vs-graphql.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:49 GMT</pubDate>
+  </item>
+  <item>
+    <title>Building Responsive Layouts That Actually Work</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/responsive-design.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/responsive-design.html</guid>
+    <description>Media queries, relative units, and mobile-first thinking — the practical toolkit for a layout that holds up on any screen.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/responsive-design.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:49 GMT</pubDate>
+  </item>
+  <item>
+    <title>Regular Expressions, Hands-On</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/regex-tutorial.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/regex-tutorial.html</guid>
+    <description>Build up regular expressions piece by piece — literals, character classes, quantifiers, and groups — with real patterns.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/regex-tutorial.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Mastering React</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/react-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/react-basics.html</guid>
+    <description>A practical introduction to React — components, state, effects, and the mistakes that trip up beginners.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/react-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Building Web Apps with Flask</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/python-flask.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/python-flask.html</guid>
+    <description>A practical introduction to Flask — routes, templates, and request handling for a small but complete web app.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/python-flask.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Automating Tasks with Python</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/python-automation.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/python-automation.html</guid>
+    <description>Practical Python automation — renaming files in bulk, scraping a webpage, and scheduling a script to run on its own.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/python-automation.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Building APIs with Node.js and Express</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/nodejs-express-api.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/nodejs-express-api.html</guid>
+    <description>Set up a working REST API with Node.js and Express — routing, middleware, and returning JSON, from an empty folder to a working endpoint.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/nodejs-express-api.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Mastering Next.js</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/nextjs-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/nextjs-basics.html</guid>
+    <description>Routing, data fetching, and rendering modes in Next.js — what changes for a React developer building with the framework.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/nextjs-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Working with MongoDB</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/mongodb-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/mongodb-basics.html</guid>
+    <description>Documents, collections, and queries in MongoDB — the core concepts for a developer coming from relational databases.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/mongodb-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>A Git Branching Workflow That Scales</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/git-branching-workflow.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/git-branching-workflow.html</guid>
+    <description>A practical branching workflow for teams of any size — feature branches, pull requests, and keeping main always deployable.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/git-branching-workflow.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Multi-Container Apps with Docker Compose</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/docker-compose.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/docker-compose.html</guid>
+    <description>Define a multi-service app — web server, database, cache — in a single docker-compose.yml and start it all with one command.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/docker-compose.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Building RESTful APIs with Django</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/django-rest-api.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/django-rest-api.html</guid>
+    <description>A hands-on walkthrough of Django REST Framework — models, serializers, viewsets, and the permissions mistake most first APIs make.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/django-rest-api.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Data Structures Demystified</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/data-structures.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/data-structures.html</guid>
+    <description>Arrays, hash maps, linked lists, stacks, queues, and trees — what each one actually trades off, and when to reach for it.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/data-structures.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>CSS Flexbox and Grid, Side by Side</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/css-flexbox-grid.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/css-flexbox-grid.html</guid>
+    <description>When to reach for Flexbox and when to reach for Grid — with the exact code for the layouts each one solves best.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/css-flexbox-grid.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Setting Up Your First CI/CD Pipeline</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/ci-cd-pipelines.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/ci-cd-pipelines.html</guid>
+    <description>Build a GitHub Actions pipeline that runs tests on every push and deploys automatically once they pass.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/ci-cd-pipelines.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Authentication with JWTs, Step by Step</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/authentication-jwt.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/authentication-jwt.html</guid>
+    <description>How JSON Web Tokens work, and how to implement login, token verification, and protected routes with them.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/authentication-jwt.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Mastering Angular and Bootstrap</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/angular.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/angular.html</guid>
+    <description>Setting up Angular CLI, structuring a project, and the component and routing basics to get a working app on screen.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/angular.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>Sorting Algorithms, Compared</title>
+    <link>https://scottventures.github.io/scottventures/Tutorials/algorithms-sorting.html</link>
+    <guid>https://scottventures.github.io/scottventures/Tutorials/algorithms-sorting.html</guid>
+    <description>Bubble sort, merge sort, and quicksort walked through step by step, with their actual time complexity explained.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/tutorials/algorithms-sorting.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:48 GMT</pubDate>
+  </item>
+  <item>
+    <title>The Complete Web Developer's Handbook</title>
+    <link>https://scottventures.github.io/scottventures/Materials/web-developers-handbook.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/web-developers-handbook.html</guid>
+    <description>How HTML, CSS, and JavaScript actually fit together — the box model, layout systems, and the DOM mistakes that trip up beginners.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/web-developers-handbook.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Version Control Beyond the Basics</title>
+    <link>https://scottventures.github.io/scottventures/Materials/version-control.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/version-control.html</guid>
+    <description>Branching strategies compared — feature branching, trunk-based development, rebase vs. merge, and picking what fits your team.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/version-control.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>UI/UX Principles Every Developer Should Understand</title>
+    <link>https://scottventures.github.io/scottventures/Materials/ui-ux-principles.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/ui-ux-principles.html</guid>
+    <description>Visual hierarchy, feedback, and consistency — the design principles that make an interface feel usable, explained for developers.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/ui-ux-principles.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Testing Strategies: Unit, Integration, and End-to-End</title>
+    <link>https://scottventures.github.io/scottventures/Materials/testing-strategies.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/testing-strategies.html</guid>
+    <description>The testing pyramid explained — what each layer of tests actually catches, and how to balance speed against coverage.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/testing-strategies.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Technical Interview Preparation: A Study Plan</title>
+    <link>https://scottventures.github.io/scottventures/Materials/technical-interview-prep.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/technical-interview-prep.html</guid>
+    <description>A structured plan for technical interview prep — data structures, mock interviews, and the behavioral side too often skipped.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/technical-interview-prep.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>System Design Basics: Scaling From One User to a Million</title>
+    <link>https://scottventures.github.io/scottventures/Materials/system-design-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/system-design-basics.html</guid>
+    <description>Load balancing, caching, and database scaling — the concepts that let an app handle far more traffic than it started with.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/system-design-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Software Architecture Patterns Explained</title>
+    <link>https://scottventures.github.io/scottventures/Materials/software-architecture-patterns.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/software-architecture-patterns.html</guid>
+    <description>Monolith, microservices, and event-driven architecture — what each pattern trades off, in plain terms.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/software-architecture-patterns.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Serverless Computing: What You Gain and What You Give Up</title>
+    <link>https://scottventures.github.io/scottventures/Materials/serverless-computing.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/serverless-computing.html</guid>
+    <description>How serverless functions actually work, and the real tradeoffs — cold starts, vendor lock-in — against the operational simplicity.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/serverless-computing.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Secure Coding: Building Robust Systems</title>
+    <link>https://scottventures.github.io/scottventures/Materials/secure-coding.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/secure-coding.html</guid>
+    <description>Defensive coding practices that close most real-world vulnerabilities: injection, XSS, password handling, authorization, and secrets management.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/secure-coding.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Operating Systems 101: Processes, Threads, and Memory</title>
+    <link>https://scottventures.github.io/scottventures/Materials/operating-systems-101.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/operating-systems-101.html</guid>
+    <description>What an operating system is actually managing on your behalf — processes, threads, memory, and scheduling.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/operating-systems-101.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Networking Fundamentals: How Data Actually Travels</title>
+    <link>https://scottventures.github.io/scottventures/Materials/networking-fundamentals.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/networking-fundamentals.html</guid>
+    <description>IP addresses, packets, and the layered model that gets data from one machine to another across the internet.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/networking-fundamentals.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Mobile Development: Native vs Cross-Platform</title>
+    <link>https://scottventures.github.io/scottventures/Materials/mobile-development-guide.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/mobile-development-guide.html</guid>
+    <description>What you actually give up and gain choosing native iOS/Android development versus a cross-platform framework.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/mobile-development-guide.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Machine Learning Basics: From Data to Predictions</title>
+    <link>https://scottventures.github.io/scottventures/Materials/machine-learning-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/machine-learning-basics.html</guid>
+    <description>How a machine learning model actually learns from data — training, features, and the difference between overfitting and generalizing.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/machine-learning-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>The Linux Command Line: A Practical Guide</title>
+    <link>https://scottventures.github.io/scottventures/Materials/linux-command-line-guide.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/linux-command-line-guide.html</guid>
+    <description>The core commands, pipes, and file permission model that make the Linux terminal a serious daily tool.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/linux-command-line-guide.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Frontend Performance: What Actually Slows Pages Down</title>
+    <link>https://scottventures.github.io/scottventures/Materials/frontend-performance.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/frontend-performance.html</guid>
+    <description>The real, measurable causes of slow web pages — render-blocking resources, unoptimized images, and layout thrashing.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/frontend-performance.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>DevOps Fundamentals: Culture, Tools, and Practice</title>
+    <link>https://scottventures.github.io/scottventures/Materials/devops-fundamentals.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/devops-fundamentals.html</guid>
+    <description>What DevOps actually means beyond the buzzword — the practices and tooling that connect development to reliable operations.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/devops-fundamentals.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Deep Learning: Neural Networks and AI Applications</title>
+    <link>https://scottventures.github.io/scottventures/Materials/deep-learning.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/deep-learning.html</guid>
+    <description>How neural networks actually learn — layers, backpropagation, convolutional and recurrent architectures, and the overfitting problem you</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/deep-learning.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Databases 101</title>
+    <link>https://scottventures.github.io/scottventures/Materials/databases-101.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/databases-101.html</guid>
+    <description>Relational database fundamentals — tables, keys, joins, indexes, and when normalization is worth the tradeoff.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/databases-101.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Data Structures and Algorithms: The Complete Picture</title>
+    <link>https://scottventures.github.io/scottventures/Materials/data-structures-algorithms-guide.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/data-structures-algorithms-guide.html</guid>
+    <description>How the core data structures work, when to reach for each one, and how Big-O notation actually describes their tradeoffs.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/data-structures-algorithms-guide.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Data Privacy and Compliance: GDPR and Beyond</title>
+    <link>https://scottventures.github.io/scottventures/Materials/data-privacy-compliance.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/data-privacy-compliance.html</guid>
+    <description>What GDPR and similar privacy laws actually require of a system handling user data, in practical, engineering terms.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/data-privacy-compliance.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>Cybersecurity Essentials Every Developer Should Know</title>
+    <link>https://scottventures.github.io/scottventures/Materials/cybersecurity-essentials.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/cybersecurity-essentials.html</guid>
+    <description>The handful of vulnerabilities responsible for most real-world breaches, and the concrete practices that prevent them.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/cybersecurity-essentials.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>Containerization and Kubernetes, Demystified</title>
+    <link>https://scottventures.github.io/scottventures/Materials/containerization-kubernetes.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/containerization-kubernetes.html</guid>
+    <description>What a container actually is, why Kubernetes exists, and the core concepts (pods, deployments, services) it</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/containerization-kubernetes.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>Cloud Fundamentals</title>
+    <link>https://scottventures.github.io/scottventures/Materials/cloud-fundamentals.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/cloud-fundamentals.html</guid>
+    <description>What the cloud actually is, IaaS vs PaaS vs SaaS, scaling strategies, and where containers and Kubernetes actually fit.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/cloud-fundamentals.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>Blockchain Fundamentals Without the Hype</title>
+    <link>https://scottventures.github.io/scottventures/Materials/blockchain-fundamentals.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/blockchain-fundamentals.html</guid>
+    <description>What a blockchain actually is mechanically — blocks, hashes, and consensus — separated from the speculation around it.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/blockchain-fundamentals.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>API Design Principles That Age Well</title>
+    <link>https://scottventures.github.io/scottventures/Materials/api-design-principles.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/api-design-principles.html</guid>
+    <description>Naming, versioning, and error handling conventions that keep an API usable and stable years after launch.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/api-design-principles.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>Agile Project Management for Developers</title>
+    <link>https://scottventures.github.io/scottventures/Materials/agile-project-management.html</link>
+    <guid>https://scottventures.github.io/scottventures/Materials/agile-project-management.html</guid>
+    <description>Sprints, standups, and story points — what Agile practices are actually for, beyond the ceremony.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/materials/agile-project-management.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>What a VPN Actually Hides (and What It Doesn't)</title>
+    <link>https://scottventures.github.io/scottventures/Articles/vpn-explained.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/vpn-explained.html</guid>
+    <description>A VPN encrypts your traffic and hides your IP from the sites you visit — here</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/vpn-explained.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>Two-Factor Auth: What It's Actually Protecting You From</title>
+    <link>https://scottventures.github.io/scottventures/Articles/two-factor-auth.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/two-factor-auth.html</guid>
+    <description>The difference between SMS codes and authenticator apps, and which one you should actually use.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/two-factor-auth.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>5 Terminal Tricks That'll Save You Hours</title>
+    <link>https://scottventures.github.io/scottventures/Articles/terminal-tricks.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/terminal-tricks.html</guid>
+    <description>Reverse search, brace expansion, and a couple of aliases you&amp;#x27;ll wonder how you lived without.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/terminal-tricks.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>What Happens During an HTTPS Handshake</title>
+    <link>https://scottventures.github.io/scottventures/Articles/ssl-tls.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/ssl-tls.html</guid>
+    <description>The padlock icon means a TLS handshake happened first. Here</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/ssl-tls.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>SSH Keys: How They Actually Work (And Why Passwords Aren't Enough)</title>
+    <link>https://scottventures.github.io/scottventures/Articles/ssh-keys.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/ssh-keys.html</guid>
+    <description>What an SSH key pair actually is, how the handshake proves who you are without sending a password, and how to set one up.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/ssh-keys.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>Semantic Versioning, Decoded</title>
+    <link>https://scottventures.github.io/scottventures/Articles/semantic-versioning.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/semantic-versioning.html</guid>
+    <description>What MAJOR.MINOR.PATCH actually promises, and why a careless version bump can break everyone who depends on your package.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/semantic-versioning.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:46 GMT</pubDate>
+  </item>
+  <item>
+    <title>Screen Resolution and DPI, Explained Simply</title>
+    <link>https://scottventures.github.io/scottventures/Articles/screen-resolution.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/screen-resolution.html</guid>
+    <description>Why the same 1920×1080 resolution looks sharp on one screen and grainy on another — the missing variable is pixel density.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/screen-resolution.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>SATA vs NVMe: Why Your SSD Choice Actually Matters</title>
+    <link>https://scottventures.github.io/scottventures/Articles/sata-vs-nvme.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/sata-vs-nvme.html</guid>
+    <description>The physical difference between the two interfaces, and when the upgrade is actually worth it.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/sata-vs-nvme.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>What a Router Actually Does, in Plain English</title>
+    <link>https://scottventures.github.io/scottventures/Articles/router-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/router-basics.html</guid>
+    <description>Packets, NAT, and why your devices all share one IP address to the outside world.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/router-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>Regex, Explained Without the Headache</title>
+    <link>https://scottventures.github.io/scottventures/Articles/regex.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/regex.html</guid>
+    <description>The six symbols that cover 90% of what you&amp;#x27;ll ever need to match, with real examples.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/regex.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>RAM vs Storage: Why More of One Doesn't Fix the Other</title>
+    <link>https://scottventures.github.io/scottventures/Articles/ram-vs-storage.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/ram-vs-storage.html</guid>
+    <description>RAM and storage solve different problems. Here</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/ram-vs-storage.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>What Actually Happens When You Press the Power Button</title>
+    <link>https://scottventures.github.io/scottventures/Articles/power-button.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/power-button.html</guid>
+    <description>POST, BIOS handoff, and the half-second chain of events before you ever see a logo — walked through step by step.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/power-button.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>How Password Managers Actually Keep You Safer</title>
+    <link>https://scottventures.github.io/scottventures/Articles/password-managers.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/password-managers.html</guid>
+    <description>Not just convenience — the specific attacks a password manager defends against that memorized passwords can</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/password-managers.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>Understanding the Motherboard: A 5-Minute Tour</title>
+    <link>https://scottventures.github.io/scottventures/Articles/motherboard.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/motherboard.html</guid>
+    <description>Chipset, VRMs, and the traces connecting them — a map of the board you&amp;#x27;re probably staring at right now.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/motherboard.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>Markdown Tricks Beyond Bold and Italics</title>
+    <link>https://scottventures.github.io/scottventures/Articles/markdown-tips.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/markdown-tips.html</guid>
+    <description>The lesser-known Markdown syntax that makes READMEs, notes, and docs noticeably more useful once you know it exists.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/markdown-tips.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>Keyboard Shortcuts That Save the Most Time</title>
+    <link>https://scottventures.github.io/scottventures/Articles/keyboard-shortcuts.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/keyboard-shortcuts.html</guid>
+    <description>Not a giant list to memorize — the handful of shortcuts with the best time-saved-to-effort-learned ratio.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/keyboard-shortcuts.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>JSON vs XML: Why One Won</title>
+    <link>https://scottventures.github.io/scottventures/Articles/json-vs-xml.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/json-vs-xml.html</guid>
+    <description>Both describe structured data. Here</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/json-vs-xml.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>HTTP Status Codes You'll Actually Encounter</title>
+    <link>https://scottventures.github.io/scottventures/Articles/http-status-codes.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/http-status-codes.html</guid>
+    <description>The handful of HTTP status codes that show up constantly in real development work, and what each one is actually telling you.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/http-status-codes.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:45 GMT</pubDate>
+  </item>
+  <item>
+    <title>Git Aliases You Didn't Know You Needed</title>
+    <link>https://scottventures.github.io/scottventures/Articles/git.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/git.html</guid>
+    <description>Turn three-word commands into two keystrokes. Copy-paste these into your .gitconfig today.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/git.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>Understanding File Permissions Without the Confusion</title>
+    <link>https://scottventures.github.io/scottventures/Articles/file-permissions.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/file-permissions.html</guid>
+    <description>What rwx and those three number groups actually mean, and how to stop guessing with chmod.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/file-permissions.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>Environment Variables: The Right Way to Store Secrets</title>
+    <link>https://scottventures.github.io/scottventures/Articles/env-variables.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/env-variables.html</guid>
+    <description>Why API keys don</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/env-variables.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>What Docker Containers Actually Isolate</title>
+    <link>https://scottventures.github.io/scottventures/Articles/docker-basics.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/docker-basics.html</guid>
+    <description>Containers aren</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/docker-basics.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>DNS Explained: What Happens Between Typing a URL and Loading a Page</title>
+    <link>https://scottventures.github.io/scottventures/Articles/dns-explained.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/dns-explained.html</guid>
+    <description>The chain of lookups — from your browser</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/dns-explained.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>Cron Syntax Without the Cheat Sheet</title>
+    <link>https://scottventures.github.io/scottventures/Articles/cron-jobs.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/cron-jobs.html</guid>
+    <description>How to actually read a cron expression instead of copy-pasting one you don</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/cron-jobs.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>Why Your CPU Has Three Levels of Cache</title>
+    <link>https://scottventures.github.io/scottventures/Articles/cpu-cache.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/cpu-cache.html</guid>
+    <description>L1, L2, and L3 cache explained — the tiny, fast memory pools that exist because RAM is too slow for a modern CPU.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/cpu-cache.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>Why You Should Be Using a Clipboard Manager</title>
+    <link>https://scottventures.github.io/scottventures/Articles/clipboard-managers.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/clipboard-managers.html</guid>
+    <description>The default clipboard only remembers one thing at a time. A clipboard manager fixes a limitation you</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/clipboard-managers.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>Browser DevTools Tricks Most People Skip</title>
+    <link>https://scottventures.github.io/scottventures/Articles/browser-devtools.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/browser-devtools.html</guid>
+    <description>Beyond console.log — a handful of DevTools features that save real debugging time once you know they exist.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/browser-devtools.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>Bandwidth vs Latency: Why Fast Internet Can Still Feel Slow</title>
+    <link>https://scottventures.github.io/scottventures/Articles/bandwidth-vs-latency.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/bandwidth-vs-latency.html</guid>
+    <description>A gigabit connection with high latency can still feel sluggish in video calls and games. Here</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/bandwidth-vs-latency.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>The Science of Effective Learning: Strategies for Retaining Information and Boosting Memory</title>
+    <link>https://scottventures.github.io/scottventures/Articles/article2.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/article2.html</guid>
+    <description>Explore evidence-based learning techniques, memory-enhancement strategies, and cognitive principles that boost retention.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/article2.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>Unleashing Your Creativity: Tapping into the Well of Imagination</title>
+    <link>https://scottventures.github.io/scottventures/Articles/article1.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/article1.html</guid>
+    <description>Uncover strategies to ignite your creative spark, foster innovation, and overcome creative blocks.</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/article1.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:44 GMT</pubDate>
+  </item>
+  <item>
+    <title>API vs SDK: The Difference That Actually Matters</title>
+    <link>https://scottventures.github.io/scottventures/Articles/api-vs-sdk.html</link>
+    <guid>https://scottventures.github.io/scottventures/Articles/api-vs-sdk.html</guid>
+    <description>Both let you talk to someone else</description>
+    <enclosure url="https://scottventures.github.io/scottventures/sources/images/covers/articles/api-vs-sdk.webp" type="image/webp" length="0"/>
+    <pubDate>Fri, 09 Oct 2026 16:26:42 GMT</pubDate>
+  </item>
+</channel>
+</rss>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Manage your ScottVentures profile, password, and display preferences.">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../sources/images/favicon.png"/>
+    <link rel="alternate" type="application/rss+xml" title="ScottVentures RSS Feed" href="../feed.xml">
+    <title>ScottVentures - Settings</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../java/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MDB -->
+    <link href="../java/mdb/mdb.min.css" rel="stylesheet"/>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../sources/css/style.css">
+    <link rel="stylesheet" href="../sources/css/electronics.css">
+    <link rel="stylesheet" href="../sources/css/vision.css">
+    <link rel="stylesheet" href="../Articles/articles.css">
+    <style>
+      .settings-wrap { max-width: 760px; margin: 0 auto; padding: 110px 20px 100px; }
+      .settings-tabs { display: flex; gap: 6px; margin-bottom: 30px; border-bottom: 1px solid #eee; flex-wrap: wrap; }
+      .settings-tab { padding: 12px 18px; cursor: pointer; color: #777; font-weight: 500; border-bottom: 3px solid transparent; }
+      .settings-tab.active { color: #f33f3f; border-bottom-color: #f33f3f; }
+      .settings-card { border: 1px solid #eee; border-radius: 8px; padding: 28px; margin-bottom: 24px; display: none; }
+      .settings-card.active { display: block; }
+      .settings-card h4 { margin-bottom: 20px; }
+      .theme-options, .size-options { display: flex; gap: 14px; flex-wrap: wrap; }
+      .option-card { border: 2px solid #eee; border-radius: 8px; padding: 18px 22px; cursor: pointer; text-align: center; min-width: 120px; }
+      .option-card.selected { border-color: #f33f3f; background: #fff5f5; }
+      html.sv-dark .option-card { border-color: #3a3f47; }
+      html.sv-dark .option-card.selected { border-color: #f33f3f; background: #2a1f1f; }
+
+      .sv-toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid #f1f1f1; cursor: pointer; }
+      .sv-toggle-row:last-of-type { border-bottom: none; }
+      html.sv-dark .sv-toggle-row { border-bottom-color: #2c2c2c; }
+      .sv-switch { position: relative; display: inline-block; width: 42px; height: 24px; flex-shrink: 0; }
+      .sv-switch input { opacity: 0; width: 0; height: 0; }
+      .sv-switch-track { position: absolute; inset: 0; background: #ccc; border-radius: 999px; transition: background-color .15s ease; }
+      .sv-switch-track::before { content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: transform .15s ease; }
+      .sv-switch input:checked + .sv-switch-track { background: #f33f3f; }
+      .sv-switch input:checked + .sv-switch-track::before { transform: translateX(18px); }
+      #deleteAccountPassword { max-width: 320px; }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="preloader">
+        <div class="jumper"><div></div><div></div><div></div></div>
+    </div>
+
+    <header class="">
+      <nav class="navbar navbar-expand-xl">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html"><img src="../sources/images/logo-nav.png" alt="ScottVentures logo" class="navbar-brand-logo"><h2>Scott<em>Ventures</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="../products.html">Articles</a></li>
+              <li class="nav-item"><a class="nav-link" href="../tutorials.html">Tutorials</a></li>
+              <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="../learning-materials.html">Learning Materials</a></li>
+              <li class="nav-item"><a class="nav-link" href="../contact.html">Contact Us</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="toolsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a><div class="dropdown-menu" aria-labelledby="toolsNavDropdown"><a class="dropdown-item" href="../scottpdf/index.html">ScottPDF <span class="dropdown-item-sub">Merge, split, convert PDFs</span></a><a class="dropdown-item" href="../scottimg/index.html">ScottIMG <span class="dropdown-item-sub">Compress, resize, edit images</span></a></div></li><li class="nav-item" id="account-nav-item">
+<div class="account-nav-wrap" id="accountNavWrap">
+<a class="nav-link" id="accountNavLink" href="login.html" data-login-href="login.html" data-home-href="../index.html">Account</a>
+</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="settings-wrap">
+      <h2 style="margin-bottom: 6px;">Settings &amp; Privacy</h2>
+      <p class="text-muted" style="margin-bottom: 30px;">Manage your profile, password, and how the site looks to you.</p>
+
+      <div class="settings-tabs">
+        <div class="settings-tab active" data-tab="profile">Profile</div>
+        <div class="settings-tab" data-tab="password">Password</div>
+        <div class="settings-tab" data-tab="display">Display</div>
+        <div class="settings-tab" data-tab="accessibility">Accessibility</div>
+        <div class="settings-tab" data-tab="notifications">Notifications</div>
+        <div class="settings-tab" data-tab="privacy">Privacy &amp; Security</div>
+        <div class="settings-tab" data-tab="manage-users" id="manageUsersTab" style="display:none;">Manage Users</div>
+      </div>
+
+      <div class="settings-card active" id="tab-profile">
+        <h4>Profile information</h4>
+
+        <div class="profile-avatar-row">
+          <div class="profile-avatar-preview" id="avatarPreview">?</div>
+          <div class="profile-avatar-actions">
+            <div class="profile-avatar-buttons">
+              <label class="profile-avatar-btn" for="avatarFileInput">Change photo</label>
+              <button type="button" class="profile-avatar-btn remove" id="removeAvatarBtn" style="display:none;">Remove photo</button>
+            </div>
+            <input type="file" id="avatarFileInput" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;">
+            <p class="profile-avatar-hint" id="avatarStatus">JPG, PNG, GIF, or WEBP. Max 5MB.</p>
+          </div>
+        </div>
+
+        <form id="profileForm">
+          <div class="form-outline mb-4">
+            <input type="text" id="profFirstName" class="form-control" required />
+            <label class="form-label" for="profFirstName">First name</label>
+          </div>
+          <div class="form-outline mb-4">
+            <input type="text" id="profLastName" class="form-control" required />
+            <label class="form-label" for="profLastName">Last name</label>
+          </div>
+          <div class="form-outline mb-4">
+            <input type="email" id="profEmail" class="form-control" required />
+            <label class="form-label" for="profEmail">Email address</label>
+          </div>
+          <p id="profileStatus" class="tn-comment-status"></p>
+          <button type="submit" class="filled-button">Save changes</button>
+        </form>
+      </div>
+
+      <div class="settings-card" id="tab-password">
+        <h4>Change password</h4>
+        <form id="passwordForm">
+          <div class="form-outline mb-4">
+            <input type="password" id="currentPassword" class="form-control" required />
+            <label class="form-label" for="currentPassword">Current password</label>
+          </div>
+          <div class="form-outline mb-4">
+            <input type="password" id="newPassword" class="form-control" required minlength="8" />
+            <label class="form-label" for="newPassword">New password (min. 8 characters)</label>
+          </div>
+          <div class="form-outline mb-4">
+            <input type="password" id="confirmNewPassword" class="form-control" required minlength="8" />
+            <label class="form-label" for="confirmNewPassword">Confirm new password</label>
+          </div>
+          <p id="passwordStatus" class="tn-comment-status"></p>
+          <button type="submit" class="filled-button">Update password</button>
+        </form>
+      </div>
+
+      <div class="settings-card" id="tab-display">
+        <h4>Display</h4>
+        <p class="text-muted">Choose how ScottVentures looks. This is saved on this device.</p>
+        <div class="theme-options">
+          <div class="option-card" data-theme="light"><i class="fa fa-sun-o" style="font-size:22px;"></i><br>Light</div>
+          <div class="option-card" data-theme="dark"><i class="fa fa-moon-o" style="font-size:22px;"></i><br>Dark</div>
+        </div>
+      </div>
+
+      <div class="settings-card" id="tab-accessibility">
+        <h4>Accessibility</h4>
+        <p class="text-muted">Adjust text size across the site. This is saved on this device.</p>
+        <div class="size-options">
+          <div class="option-card" data-size="normal">Normal</div>
+          <div class="option-card" data-size="large">Large</div>
+          <div class="option-card" data-size="larger">Larger</div>
+        </div>
+      </div>
+
+      <div class="settings-card" id="tab-notifications">
+        <h4>Notifications</h4>
+        <p class="text-muted">Choose what creates a notification (bell icon + Account/notifications.html).</p>
+        <label class="sv-toggle-row">
+          <span>
+            <strong>Login alerts</strong>
+            <span class="text-muted" style="display:block;font-size:13px;">Notify me whenever my account is signed into.</span>
+          </span>
+          <span class="sv-switch"><input type="checkbox" id="notifyLoginToggle"><span class="sv-switch-track"></span></span>
+        </label>
+        <label class="sv-toggle-row">
+          <span>
+            <strong>Forum reply alerts</strong>
+            <span class="text-muted" style="display:block;font-size:13px;">Notify me when someone replies to my forum posts.</span>
+          </span>
+          <span class="sv-switch"><input type="checkbox" id="notifyRepliesToggle"><span class="sv-switch-track"></span></span>
+        </label>
+        <label class="sv-toggle-row">
+          <span>
+            <strong>Direct message alerts</strong>
+            <span class="text-muted" style="display:block;font-size:13px;">Notify me when another member sends me a message.</span>
+          </span>
+          <span class="sv-switch"><input type="checkbox" id="notifyMessagesToggle"><span class="sv-switch-track"></span></span>
+        </label>
+        <p id="notifyPrefsStatus" class="tn-comment-status"></p>
+      </div>
+
+      <div class="settings-card" id="tab-privacy">
+        <h4>Privacy &amp; Security</h4>
+
+        <h5 style="margin-top:10px;">Active sessions</h5>
+        <p class="text-muted" id="sessionsSummary">Loading…</p>
+        <button type="button" class="filled-button" id="logoutOthersBtn" style="background:#6c757d;">Log out of other devices</button>
+        <p id="sessionsStatus" class="tn-comment-status"></p>
+
+        <h5 style="margin-top:34px;">Your data</h5>
+        <p class="text-muted">Download a copy of your profile, comments, and forum posts.</p>
+        <button type="button" class="filled-button" id="downloadDataBtn" style="background:#6c757d;">Download my data</button>
+
+        <h5 style="margin-top:34px;color:#f33f3f;">Danger zone</h5>
+        <p class="text-muted">Permanently delete your account. This can't be undone.</p>
+        <button type="button" class="filled-button" id="deleteAccountBtn" style="background:#333;">Delete my account</button>
+        <div id="deleteAccountBox" style="display:none;margin-top:14px;">
+          <div class="form-outline mb-3">
+            <input type="password" id="deleteAccountPassword" class="form-control" placeholder="Confirm your password">
+          </div>
+          <button type="button" class="filled-button" id="confirmDeleteAccountBtn" style="background:#f33f3f;">Yes, permanently delete my account</button>
+          <p id="deleteAccountStatus" class="tn-comment-status"></p>
+        </div>
+      </div>
+
+      <div class="settings-card" id="tab-manage-users">
+        <h4>Manage Users</h4>
+        <p class="text-muted">Every registered account. Admin accounts are set in <code>Backend/config.js</code> (<code>ADMIN_EMAILS</code>) and can't be removed here.</p>
+        <p id="usersStatus" class="tn-comment-status"></p>
+        <div id="usersList"></div>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="row footer-main__row">
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Product</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../index.html">Home</a>
+              </li>
+              <li>
+                <a href="../products.html">Articles</a>
+              </li>
+              <li>
+                <a href="../tutorials.html">Tutorials</a>
+              </li>
+              <li>
+                <a href="../help/documentation.html">Tools</a>
+              </li>
+              <li>
+                <a href="../faq.html">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Resources</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../scottpdf/index.html">ScottVentures Desktop</a>
+              </li>
+              <li>
+                <a href="../scottimg/index.html">ScottVentures Mobile</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Solutions</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../contact.html">Business</a>
+              </li>
+              <li>
+                <a href="../learning-materials.html">Education</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Legal</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../help/security.html">Security</a>
+              </li>
+              <li>
+                <a href="../privacy-policy.html">Privacy policy</a>
+              </li>
+              <li>
+                <a href="../terms.html">Terms & conditions</a>
+              </li>
+              <li>
+                <a href="../help/cookies.html">Cookies</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Company</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../about.html">About us</a>
+              </li>
+              <li>
+                <a href="../contact.html">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-big__lang">
+              <span class="lang__current">
+                <i class="ico ico--world"></i>
+                English <i class="ico ico--down-w"></i>
+              </span>
+              <ul class="lang__menu">
+                <li>
+                  <a href="/">
+                    <svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path fill="currentColor"
+                        d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z"
+                        class=""></path>
+                    </svg>
+                    English
+                  </a>
+                </li>
+                <li>
+                  <a href="/es">Español</a>
+                </li>
+                <li>
+                  <a href="/fr">Français</a>
+                </li>
+                <li>
+                  <a href="/de">Deutsch</a>
+                </li>
+                <li>
+                  <a href="/it">Italiano</a>
+                </li>
+                <li>
+                  <a href="/pt">Português</a>
+                </li>
+                <li>
+                  <a href="/ja">日本語</a>
+                </li>
+                <li>
+                  <a href="/ru">Pусский</a>
+                </li>
+                <li>
+                  <a href="/ko">한국어</a>
+                </li>
+                <li>
+                  <a href="/zh-cn">中文 (简体)</a>
+                </li>
+                <li>
+                  <a href="/zh-tw">中文 (繁體)</a>
+                </li>
+                <li>
+                  <a href="/ar">العربية</a>
+                </li>
+                <li>
+                  <a href="/bg">Български</a>
+                </li>
+                <li>
+                  <a href="/ca">Català</a>
+                </li>
+                <li>
+                  <a href="/nl">Nederlands</a>
+                </li>
+                <li>
+                  <a href="/el">Ελληνικά</a>
+                </li>
+                <li>
+                  <a href="/hi">हिन्दी</a>
+                </li>
+                <li>
+                  <a href="/id">Bahasa Indonesia</a>
+                </li>
+                <li>
+                  <a href="/ms">Bahasa Melayu</a>
+                </li>
+                <li>
+                  <a href="/pl">Polski</a>
+                </li>
+                <li>
+                  <a href="/sv">Svenska</a>
+                </li>
+                <li>
+                  <a href="/th">ภาษาไทย</a>
+                </li>
+                <li>
+                  <a href="/tr">Türkçe</a>
+                </li>
+                <li>
+                  <a href="/uk">Українська</a>
+                </li>
+                <li>
+                  <a href="/vi">Tiếng Việt</a>
+                </li>
+                <li>
+                  <a href="/sw">Kiswahili</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="footer-main__info" style="flex-wrap: wrap">
+              <div class="slogan">&copy;Scottventures 2026 &reg;- Your Tech Referal </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../sources/js/vendor/supabase.js"></script>
+    <script src="../sources/js/supabase-config.js"></script>
+    <script src="../sources/js/supabase-adapter.js"></script>
+    <script src="../java/jquery/jquery.min.js"></script>
+    <script src="../java/mdb/mdb.min.js"></script>
+    <script src="../java/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../java/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../sources/js/custom.js"></script>
+    <script src="../sources/js/isotope.js"></script>
+    <script src="../sources/js/preferences.js"></script>
+    <script src="../sources/js/search-data.js"></script>
+    <script src="../sources/js/search.js"></script>
+    <script src="../sources/js/session.js"></script>
+    <script src="../sources/js/i18n.js"></script>
+
+    <script>
+      // --- Require login ---
+      document.addEventListener('DOMContentLoaded', function () {
+        var token = svGetToken();
+        if (!token) {
+          window.location.href = 'login.html';
+          return;
+        }
+
+        // --- Tabs ---
+        var tabs = document.querySelectorAll('.settings-tab');
+        function activateTab(name) {
+          tabs.forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-tab') === name); });
+          document.querySelectorAll('.settings-card').forEach(function (c) {
+            c.classList.toggle('active', c.id === 'tab-' + name);
+          });
+        }
+        tabs.forEach(function (t) {
+          t.addEventListener('click', function () { activateTab(t.getAttribute('data-tab')); });
+        });
+        var hash = window.location.hash.replace('#', '');
+        if (hash) activateTab(hash);
+
+        // --- Load current profile into the form ---
+        fetch(AUTH_API_BASE_URL + '/api/auth/me', { headers: { Authorization: 'Bearer ' + token } })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            var fields = [
+              ['profFirstName', data.user.firstName],
+              ['profLastName', data.user.lastName],
+              ['profEmail', data.user.email]
+            ];
+            fields.forEach(function (pair) {
+              var el = document.getElementById(pair[0]);
+              el.value = pair[1];
+              // MDB's floating label only moves up in response to a
+              // real 'input' event — setting .value directly from JS
+              // (as opposed to the user typing) doesn't trigger it,
+              // so the label would otherwise sit on top of the text.
+              el.dispatchEvent(new Event('input', { bubbles: true }));
+            });
+
+            renderAvatarPreview(data.user.avatarUrl);
+
+            // --- Manage Users tab: admin accounts only ---
+            if (data.user.isAdmin) {
+              document.getElementById('manageUsersTab').style.display = 'block';
+              if (window.location.hash.replace('#', '') === 'manage-users') {
+                activateTab('manage-users');
+              }
+              loadUsers();
+            }
+
+            // --- Notifications tab ---
+            document.getElementById('notifyLoginToggle').checked = data.user.notifyLogin;
+            document.getElementById('notifyRepliesToggle').checked = data.user.notifyReplies;
+            document.getElementById('notifyMessagesToggle').checked = data.user.notifyMessages;
+          });
+
+        function saveNotifyPrefs() {
+          var statusEl = document.getElementById('notifyPrefsStatus');
+          fetch(AUTH_API_BASE_URL + '/api/auth/notification-prefs', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+            body: JSON.stringify({
+              notifyLogin: document.getElementById('notifyLoginToggle').checked,
+              notifyReplies: document.getElementById('notifyRepliesToggle').checked,
+              notifyMessages: document.getElementById('notifyMessagesToggle').checked
+            })
+          })
+            .then(function (r) { return r.json(); })
+            .then(function () {
+              statusEl.textContent = 'Saved.';
+              statusEl.className = 'tn-comment-status success';
+              setTimeout(function () { statusEl.textContent = ''; }, 2000);
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't reach the server.";
+              statusEl.className = 'tn-comment-status error';
+            });
+        }
+        document.getElementById('notifyLoginToggle').addEventListener('change', saveNotifyPrefs);
+        document.getElementById('notifyRepliesToggle').addEventListener('change', saveNotifyPrefs);
+        document.getElementById('notifyMessagesToggle').addEventListener('change', saveNotifyPrefs);
+
+        // --- Privacy & Security tab ---
+        function loadSessions() {
+          fetch(AUTH_API_BASE_URL + '/api/auth/sessions', { headers: { Authorization: 'Bearer ' + token } })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              var count = data.sessions.length;
+              document.getElementById('sessionsSummary').textContent =
+                count + ' active session' + (count === 1 ? '' : 's') + ' (including this one).';
+            })
+            .catch(function () {
+              document.getElementById('sessionsSummary').textContent = "Couldn't load sessions.";
+            });
+        }
+        document.getElementById('logoutOthersBtn').addEventListener('click', function () {
+          var statusEl = document.getElementById('sessionsStatus');
+          fetch(AUTH_API_BASE_URL + '/api/auth/sessions/logout-others', {
+            method: 'POST',
+            headers: { Authorization: 'Bearer ' + token }
+          })
+            .then(function (r) { return r.json(); })
+            .then(function (result) {
+              statusEl.textContent = 'Signed out of ' + result.signedOutCount + ' other device(s).';
+              statusEl.className = 'tn-comment-status success';
+              loadSessions();
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't reach the server.";
+              statusEl.className = 'tn-comment-status error';
+            });
+        });
+
+        document.getElementById('downloadDataBtn').addEventListener('click', function () {
+          fetch(AUTH_API_BASE_URL + '/api/auth/export', { headers: { Authorization: 'Bearer ' + token } })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+              var url = URL.createObjectURL(blob);
+              var a = document.createElement('a');
+              a.href = url;
+              a.download = 'scottventures-my-data.json';
+              document.body.appendChild(a);
+              a.click();
+              a.remove();
+              URL.revokeObjectURL(url);
+            });
+        });
+
+        document.getElementById('deleteAccountBtn').addEventListener('click', function () {
+          document.getElementById('deleteAccountBox').style.display = 'block';
+        });
+        document.getElementById('confirmDeleteAccountBtn').addEventListener('click', function () {
+          var statusEl = document.getElementById('deleteAccountStatus');
+          var pw = document.getElementById('deleteAccountPassword').value;
+          if (!pw) {
+            statusEl.textContent = 'Enter your password to confirm.';
+            statusEl.className = 'tn-comment-status error';
+            return;
+          }
+          if (!window.confirm('This permanently deletes your account. Continue?')) return;
+          fetch(AUTH_API_BASE_URL + '/api/auth/account', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+            body: JSON.stringify({ password: pw })
+          })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (result.ok) {
+                svClearSession();
+                window.alert('Your account has been deleted.');
+                window.location.href = '../index.html';
+              } else {
+                statusEl.textContent = result.data.error || 'Could not delete account.';
+                statusEl.className = 'tn-comment-status error';
+              }
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't reach the server.";
+              statusEl.className = 'tn-comment-status error';
+            });
+        });
+        loadSessions();
+
+        function escapeHtml(str) {
+          var div = document.createElement('div');
+          div.textContent = str;
+          return div.innerHTML;
+        }
+
+        function loadUsers() {
+          var statusEl = document.getElementById('usersStatus');
+          fetch(AUTH_API_BASE_URL + '/api/admin/users', { headers: { Authorization: 'Bearer ' + token } })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (!result.ok) {
+                statusEl.textContent = result.data.error || 'Could not load users.';
+                statusEl.className = 'tn-comment-status error';
+                return;
+              }
+              statusEl.textContent = '';
+              var list = document.getElementById('usersList');
+              list.innerHTML = result.data.users.map(function (u) {
+                var badge = u.isAdmin ? ' <span style="color:#f33f3f; font-size:12px; font-weight:600;">(admin)</span>' : '';
+                var deleteBtn = u.isAdmin
+                  ? ''
+                  : '<button type="button" class="filled-button" style="background:#6c757d; padding:6px 14px; font-size:13px;" onclick="deleteUser(\'' + u.id + '\', \'' + escapeHtml(u.firstName) + '\')">Delete</button>';
+                return '<div style="display:flex; align-items:center; justify-content:space-between; padding:14px 0; border-bottom:1px solid #eee;">' +
+                  '<div>' +
+                    '<strong>' + escapeHtml(u.firstName) + ' ' + escapeHtml(u.lastName) + '</strong>' + badge + '<br>' +
+                    '<span class="text-muted" style="font-size:13px;">' + escapeHtml(u.email) + ' · joined ' + new Date(u.createdAt).toLocaleDateString() + '</span>' +
+                  '</div>' +
+                  deleteBtn +
+                '</div>';
+              }).join('') || '<p class="text-muted">No users found.</p>';
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't reach the server.";
+              statusEl.className = 'tn-comment-status error';
+            });
+        }
+
+        window.deleteUser = function (id, name) {
+          if (!window.confirm('Delete ' + name + '\'s account? This cannot be undone.')) return;
+          fetch(AUTH_API_BASE_URL + '/api/admin/users/' + id, {
+            method: 'DELETE',
+            headers: { Authorization: 'Bearer ' + token }
+          })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (result.ok) {
+                loadUsers();
+              } else {
+                window.alert(result.data.error || 'Could not delete that user.');
+              }
+            })
+            .catch(function () {
+              window.alert("Couldn't reach the server.");
+            });
+        };
+
+        // --- Profile picture ---
+        // homeHref/prefix matches the convention session.js uses for
+        // nav links -- "" on a root page, "../" one level down. This
+        // page always lives in Account/, so it's always one level down.
+        var avatarPrefix = '../';
+
+        function renderAvatarPreview(avatarUrl) {
+          var preview = document.getElementById('avatarPreview');
+          var removeBtn = document.getElementById('removeAvatarBtn');
+          if (avatarUrl) {
+            preview.innerHTML = '<img src="' + (/^https?:/.test(avatarUrl) ? avatarUrl : avatarPrefix + avatarUrl.replace(/^\//, '')) + '" alt="">';
+            removeBtn.style.display = 'inline-block';
+          } else {
+            var firstName = document.getElementById('profFirstName').value || '?';
+            preview.textContent = firstName.charAt(0).toUpperCase();
+            removeBtn.style.display = 'none';
+          }
+        }
+
+        // Keeps the nav's avatar button/dropdown in sync immediately,
+        // instead of waiting for the next page load to pick up the change.
+        function refreshNavAvatar(updatedUser) {
+          svSetSession(token, updatedUser);
+          var navLink = document.getElementById('accountNavLink');
+          if (navLink && typeof renderLoggedIn === 'function') {
+            renderLoggedIn(navLink, updatedUser, navLink.getAttribute('data-home-href') || '../index.html');
+          }
+        }
+
+        document.getElementById('avatarFileInput').addEventListener('change', function (e) {
+          var file = e.target.files && e.target.files[0];
+          if (!file) return;
+          var statusEl = document.getElementById('avatarStatus');
+          statusEl.textContent = 'Uploading...';
+          statusEl.className = 'profile-avatar-hint';
+
+          var formData = new FormData();
+          formData.append('file', file);
+
+          fetch(AUTH_API_BASE_URL + '/api/auth/avatar', {
+            method: 'POST',
+            headers: { Authorization: 'Bearer ' + token },
+            body: formData
+          })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (result.ok) {
+                refreshNavAvatar(result.data.user);
+                renderAvatarPreview(result.data.user.avatarUrl);
+                statusEl.textContent = 'Updated.';
+              } else {
+                statusEl.textContent = result.data.error || 'Could not upload that image.';
+              }
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't reach the server.";
+            })
+            .finally(function () {
+              e.target.value = '';
+            });
+        });
+
+        document.getElementById('removeAvatarBtn').addEventListener('click', function () {
+          var statusEl = document.getElementById('avatarStatus');
+          fetch(AUTH_API_BASE_URL + '/api/auth/avatar', {
+            method: 'DELETE',
+            headers: { Authorization: 'Bearer ' + token }
+          })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (result.ok) {
+                refreshNavAvatar(result.data.user);
+                renderAvatarPreview(result.data.user.avatarUrl);
+                statusEl.textContent = 'Removed.';
+              } else {
+                statusEl.textContent = result.data.error || 'Could not remove photo.';
+              }
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't reach the server.";
+            });
+        });
+
+        // --- Profile form ---
+        document.getElementById('profileForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+          var statusEl = document.getElementById('profileStatus');
+          fetch(AUTH_API_BASE_URL + '/api/auth/profile', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+            body: JSON.stringify({
+              firstName: document.getElementById('profFirstName').value,
+              lastName: document.getElementById('profLastName').value,
+              email: document.getElementById('profEmail').value
+            })
+          })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (result.ok) {
+                svSetSession(token, result.data.user);
+                statusEl.textContent = 'Saved.';
+                statusEl.className = 'tn-comment-status success';
+              } else {
+                statusEl.textContent = result.data.error || 'Could not save changes.';
+                statusEl.className = 'tn-comment-status error';
+              }
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't reach the server.";
+              statusEl.className = 'tn-comment-status error';
+            });
+        });
+
+        // --- Password form ---
+        document.getElementById('passwordForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+          var statusEl = document.getElementById('passwordStatus');
+          var newPass = document.getElementById('newPassword').value;
+          var confirmPass = document.getElementById('confirmNewPassword').value;
+          if (newPass !== confirmPass) {
+            statusEl.textContent = 'New passwords do not match.';
+            statusEl.className = 'tn-comment-status error';
+            return;
+          }
+          fetch(AUTH_API_BASE_URL + '/api/auth/change-password', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+            body: JSON.stringify({
+              currentPassword: document.getElementById('currentPassword').value,
+              newPassword: newPass
+            })
+          })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (result.ok) {
+                statusEl.textContent = 'Password updated.';
+                statusEl.className = 'tn-comment-status success';
+                document.getElementById('passwordForm').reset();
+              } else {
+                statusEl.textContent = result.data.error || 'Could not update password.';
+                statusEl.className = 'tn-comment-status error';
+              }
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't reach the server.";
+              statusEl.className = 'tn-comment-status error';
+            });
+        });
+
+        // --- Display (theme) ---
+        function refreshThemeCards() {
+          var current = svGetTheme();
+          document.querySelectorAll('.option-card[data-theme]').forEach(function (card) {
+            card.classList.toggle('selected', card.getAttribute('data-theme') === current);
+          });
+        }
+        document.querySelectorAll('.option-card[data-theme]').forEach(function (card) {
+          card.addEventListener('click', function () {
+            svSetTheme(card.getAttribute('data-theme'));
+            refreshThemeCards();
+          });
+        });
+        refreshThemeCards();
+
+        // --- Accessibility (text size) ---
+        function refreshSizeCards() {
+          var current = svGetTextSize();
+          document.querySelectorAll('.option-card[data-size]').forEach(function (card) {
+            card.classList.toggle('selected', card.getAttribute('data-size') === current);
+          });
+        }
+        document.querySelectorAll('.option-card[data-size]').forEach(function (card) {
+          card.addEventListener('click', function () {
+            svSetTextSize(card.getAttribute('data-size'));
+            refreshSizeCards();
+          });
+        });
+        refreshSizeCards();
+      });
+    </script>
+
+  </body>
+
+</html>

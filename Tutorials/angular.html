@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Setting up Angular CLI, structuring a project, and the component and routing basics to get a working app on screen.">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon"  href="../sources/images/favicon.png"/>
+    <link rel="alternate" type="application/rss+xml" title="ScottVentures RSS Feed" href="../feed.xml">
+    <title>Mastering Angular and Bootstrap - ScottVentures</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../java/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--
+
+TechStar
+
+https://johnnie33.github.io
+
+-->
+    <!-- Addsence -->
+    <script src="../sources/js/vendor/supabase.js"></script>
+    <script src="../sources/js/supabase-config.js"></script>
+    <script src="../sources/js/supabase-adapter.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5694698390278360"
+     crossorigin="anonymous"></script>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../sources/css/style.css">
+    <link rel="stylesheet" href="../sources/css/electronics.css">
+    <link rel="stylesheet" href="../sources/css/vision.css">
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .tcontent{
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .tcontent a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #333;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+       .titles {
+            color: #007bff;
+        }
+       img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+
+      <meta property="og:image" content="../sources/images/covers/tutorials/angular.webp">
+    <meta property="og:title" content="Mastering Angular and Bootstrap - ScottVentures">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../sources/images/covers/tutorials/angular.webp">
+      <style>.sv-cover{display:block;max-width:100%;height:auto;border-radius:12px;margin:1rem auto 1.5rem;box-shadow:0 8px 24px rgba(0,0,0,.18)}</style>
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-xl">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html"><img src="../sources/images/logo-nav.png" alt="ScottVentures logo" class="navbar-brand-logo"><h2>Scott<em>Ventures</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="../products.html">Articles
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../tutorials.html">Tutorials
+                <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../learning-materials.html">Learning Materials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../contact.html">Contact Us</a>
+              </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="toolsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a><div class="dropdown-menu" aria-labelledby="toolsNavDropdown"><a class="dropdown-item" href="../scottpdf/index.html">ScottPDF <span class="dropdown-item-sub">Merge, split, convert PDFs</span></a><a class="dropdown-item" href="../scottimg/index.html">ScottIMG <span class="dropdown-item-sub">Compress, resize, edit images</span></a></div></li><li class="nav-item" id="account-nav-item">
+<div class="account-nav-wrap" id="accountNavWrap">
+<a class="nav-link" id="accountNavLink" href="../Account/login.html" data-login-href="../Account/login.html" data-home-href="../index.html">Account</a>
+</div>
+</li>
+</ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-heading products-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>Mastering Web App Development</h4>
+              <h2>with Angular and Bootstrap</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="products">
+      <div class="container">
+        <div class="row">
+      <img class="sv-cover" src="../sources/images/covers/tutorials/angular.webp" alt="Cover: Mastering Web App Development with Angular and Bootstrap" width="1200" height="630">
+      <img src="../sources/images/angular.png" alt="Angular">
+    <nav class = "tcontent">
+        <a href="#introduction">Introduction</a>
+        <a href="#environment">Setting Up Your Development Environment</a>
+        <a href="#structure">Creating the Project Structure</a>
+        <a href="#ui">Designing the User Interface</a>
+        <a href="#binding">Implementing Data Binding and Components</a>
+        <a href="#animations">Adding Stylish CSS Animations</a>
+        <a href="#services">Integrating Services for Data Management</a>
+        <a href="#routing">Routing and Navigation</a>
+        <a href="#seo">Optimizing for SEO</a>
+        <a href="#deployment">Deployment and Conclusion</a>
+    </nav>
+    <main>
+        <section id="introduction">
+            <h2>Introduction to Angular</h2>
+            <p>Angular is a powerful JavaScript framework...</p>
+        </section>
+
+        <section id="environment">
+            <h2 class = "titles">Setting Up Your Development Environment</h2>
+            <p>To begin, make sure you have Node.js and Angular CLI installed. Open your terminal and run the following commands:</p>
+            <pre><code>npm install -g @angular/cli
+              ng new my-web-app
+              cd my-web-app</code></pre>
+        </section>
+
+        <section id="structure">
+            <h2 class = "titles">Creating the Project Structure</h2>
+            <p>Angular's CLI provides a convenient way to generate components, services, and more. Use these commands to create the initial structure:</p>
+            <pre><code>ng generate component header
+              ng generate component home
+              ng generate component about
+              ng generate service data</code></pre>
+        </section>
+
+        <section id="ui">
+            <h2 class = "titles">Designing the User Interface</h2>
+            <p>Every Angular component has a template — the HTML that defines what it renders — and Angular's template syntax adds a few things plain HTML can't do. <code>*ngIf</code> conditionally includes an element, <code>*ngFor</code> repeats one per item in a list, and square brackets bind a property to a value from your component class:</p>
+            <pre><code>&lt;div *ngIf="articles.length &gt; 0"&gt;
+  &lt;article *ngFor="let a of articles"&gt;
+    &lt;h3 [textContent]="a.title"&gt;&lt;/h3&gt;
+  &lt;/article&gt;
+&lt;/div&gt;
+&lt;p *ngIf="articles.length === 0"&gt;No articles yet.&lt;/p&gt;</code></pre>
+            <p>The <code>*</code> prefix marks these as "structural directives" — they change the structure of the DOM (adding or removing elements entirely), not just a property on an existing one. That distinction matters once you start writing your own directives.</p>
+        </section>
+
+        <section id="binding">
+            <h2 class = "titles">Implementing Data Binding and Components</h2>
+            <p>Angular gives you four binding directions, and picking the right one keeps components predictable:</p>
+            <pre><code>&lt;!-- One-way: component to view --&gt;
+&lt;h1&gt;{{ pageTitle }}&lt;/h1&gt;
+
+&lt;!-- One-way: view to component (event) --&gt;
+&lt;button (click)="save()"&gt;Save&lt;/button&gt;
+
+&lt;!-- Property binding --&gt;
+&lt;img [src]="userAvatarUrl"&gt;
+
+&lt;!-- Two-way (form inputs) --&gt;
+&lt;input [(ngModel)]="username"&gt;</code></pre>
+            <p><code>[(ngModel)]</code> is two-way binding specifically for form controls — it's syntactic sugar for a property binding and an event binding combined. It's convenient, but reach for it selectively: two-way binding on everything makes it harder to trace where a value actually changed from, which matters once a component has more than a couple of fields.</p>
+        </section>
+
+        <section id="animations">
+            <h2 class = "titles">Adding Stylish CSS Animations</h2>
+            <p>Angular's animation module (<code>@angular/animations</code>) lets you define transitions declaratively, tied to a component's state, rather than manually toggling CSS classes with JavaScript:</p>
+            <pre><code>trigger('fadeIn', [
+  transition(':enter', [
+    style({ opacity: 0 }),
+    animate('300ms ease-in', style({ opacity: 1 }))
+  ])
+])</code></pre>
+            <p>Attach it to an element with <code>[@fadeIn]</code>, and Angular runs the animation automatically whenever that element enters the view. For simple hover effects and transitions, plain CSS is usually enough and has less overhead — reach for Angular's animation module when the animation needs to be tied to component state or route changes, not just a hover.</p>
+        </section>
+
+        <section id="services">
+            <h2 class = "titles">Integrating Services for Data Management</h2>
+            <p>A service is a plain class that holds logic you don't want duplicated across components — API calls, shared state, anything that isn't specifically about rendering. Angular's dependency injection hands a shared instance to any component that asks for one:</p>
+            <pre><code>@Injectable({ providedIn: 'root' })
+export class ArticleService {
+  constructor(private http: HttpClient) {}
+
+  getArticles() {
+    return this.http.get&lt;Article[]&gt;('/api/articles');
+  }
+}</code></pre>
+            <p>Any component can now inject it through its constructor — <code>constructor(private articles: ArticleService) {}</code> — without needing to know how the data actually gets fetched. That separation is what makes components testable in isolation: swap in a fake service in a test, and the component never knows the difference.</p>
+        </section>
+
+        <section id="routing">
+            <h2 class = "titles">Routing and Navigation</h2>
+            <p>Angular's router maps URL paths to components, so a single-page app can still have distinct, linkable views:</p>
+            <pre><code>const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'articles/:id', component: ArticleDetailComponent },
+  { path: '**', component: NotFoundComponent }
+];</code></pre>
+            <p>The <code>:id</code> segment is a route parameter — inside <code>ArticleDetailComponent</code>, <code>this.route.snapshot.paramMap.get('id')</code> reads whatever value was in the URL. The <code>**</code> wildcard route always goes last; it catches anything that didn't match an earlier pattern, which is how you implement a proper 404 page instead of a blank screen.</p>
+        </section>
+
+        <section id="seo">
+            <h2>Optimizing for SEO</h2>
+            <p>Single-page apps have a real SEO weakness: search engine crawlers historically don't execute JavaScript as reliably as a browser does, so a page that renders entirely client-side can look empty to a crawler. Angular Universal solves this with server-side rendering — the initial HTML is generated on the server with real content already in it, and Angular "hydrates" it into a full interactive app once the JavaScript loads.</p>
+            <p>Beyond rendering strategy, the basics still apply: set a unique <code>&lt;title&gt;</code> and meta description per route using Angular's <code>Title</code> and <code>Meta</code> services, and make sure your router doesn't rely on URL fragments (<code>#/articles/3</code>) for routes you want indexed — use the <code>PathLocationStrategy</code> for clean, crawlable URLs instead.</p>
+        </section>
+
+        <section id="deployment">
+            <h2 class = "titles">Deployment and Conclusion</h2>
+            <p>Building for production compiles and minifies everything into static files ready to serve:</p>
+            <pre><code>ng build --configuration production</code></pre>
+            <p>The output lands in <code>dist/</code> — a set of static HTML, CSS, and JS files that can be served by any static host (Netlify, Vercel, an S3 bucket, or a simple Nginx server). If you're using Angular Universal for server-side rendering, you'll deploy the Node server it generates instead, since that part needs to actually run per-request rather than being served as static files.</p>
+            <p>From here, the fastest way to get comfortable is to rebuild something you already understand — a to-do list, a simple blog reader — using components, services, and routing together. The concepts in this tutorial only click once you've wired them together yourself at least once.</p>
+        </section>
+    </main>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+<!-- Footer Test -->
+    <!-- Reactions -->
+    <div class="tn-reactions" data-reactions="tutorial-angular">
+      <button type="button" class="filled-button" data-vote="like">&#128077; <span data-count="like">0</span></button>
+      <button type="button" class="filled-button tn-dislike" data-vote="dislike">&#128078; <span data-count="dislike">0</span></button>
+    </div>
+
+    <!-- Comments -->
+    <div class="tn-comments" data-comments="tutorial-angular">
+      <h3>Comments</h3>
+      <div data-comment-list class="tn-comment-list"></div>
+      <form data-comment-form class="tn-comment-form">
+        <input type="text" name="name" placeholder="Name" required>
+        <textarea name="message" placeholder="Say something..." required></textarea>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="filled-button">Post comment</button>
+        <p data-comment-status class="tn-comment-status"></p>
+      </form>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="row footer-main__row">
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Product</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../index.html">Home</a>
+              </li>
+              <li>
+                <a href="../products.html">Articles</a>
+              </li>
+              <li>
+                <a href="../tutorials.html">Tutorials</a>
+              </li>
+              <li>
+                <a href="../help/documentation.html">Tools</a>
+              </li>
+              <li>
+                <a href="../faq.html">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Resources</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../scottpdf/index.html">ScottVentures Desktop</a>
+              </li>
+              <li>
+                <a href="../scottimg/index.html">ScottVentures Mobile</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Solutions</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../contact.html">Business</a>
+              </li>
+              <li>
+                <a href="../learning-materials.html">Education</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Legal</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../help/security.html">Security</a>
+              </li>
+              <li>
+                <a href="../privacy-policy.html">Privacy policy</a>
+              </li>
+              <li>
+                <a href="../terms.html">Terms & conditions</a>
+              </li>
+              <li>
+                <a href="../help/cookies.html">Cookies</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Company</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../about.html">About us</a>
+              </li>
+              <li>
+                <a href="../contact.html">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-big__lang">
+              <span class="lang__current">
+                <i class="ico ico--world"></i>
+                English <i class="ico ico--down-w"></i>
+              </span>
+              <ul class="lang__menu">
+                <li>
+                  <a href="/">
+                    <svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path fill="currentColor"
+                        d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z"
+                        class=""></path>
+                    </svg>
+                    English
+                  </a>
+                </li>
+                <li>
+                  <a href="/es">Español</a>
+                </li>
+                <li>
+                  <a href="/fr">Français</a>
+                </li>
+                <li>
+                  <a href="/de">Deutsch</a>
+                </li>
+                <li>
+                  <a href="/it">Italiano</a>
+                </li>
+                <li>
+                  <a href="/pt">Português</a>
+                </li>
+                <li>
+                  <a href="/ja">日本語</a>
+                </li>
+                <li>
+                  <a href="/ru">Pусский</a>
+                </li>
+                <li>
+                  <a href="/ko">한국어</a>
+                </li>
+                <li>
+                  <a href="/zh-cn">中文 (简体)</a>
+                </li>
+                <li>
+                  <a href="/zh-tw">中文 (繁體)</a>
+                </li>
+                <li>
+                  <a href="/ar">العربية</a>
+                </li>
+                <li>
+                  <a href="/bg">Български</a>
+                </li>
+                <li>
+                  <a href="/ca">Català</a>
+                </li>
+                <li>
+                  <a href="/nl">Nederlands</a>
+                </li>
+                <li>
+                  <a href="/el">Ελληνικά</a>
+                </li>
+                <li>
+                  <a href="/hi">हिन्दी</a>
+                </li>
+                <li>
+                  <a href="/id">Bahasa Indonesia</a>
+                </li>
+                <li>
+                  <a href="/ms">Bahasa Melayu</a>
+                </li>
+                <li>
+                  <a href="/pl">Polski</a>
+                </li>
+                <li>
+                  <a href="/sv">Svenska</a>
+                </li>
+                <li>
+                  <a href="/th">ภาษาไทย</a>
+                </li>
+                <li>
+                  <a href="/tr">Türkçe</a>
+                </li>
+                <li>
+                  <a href="/uk">Українська</a>
+                </li>
+                <li>
+                  <a href="/vi">Tiếng Việt</a>
+                </li>
+                <li>
+                  <a href="/sw">Kiswahili</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="footer-main__info" style="flex-wrap: wrap">
+              <div class="slogan">&copy;Scottventures 2026 &reg;- Your Tech Referal </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../java/jquery/jquery.min.js"></script>
+    <script src="../java/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="../java/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../sources/js/custom.js"></script>
+    <script src="../sources/js/preferences.js"></script>
+    <script src="../sources/js/search-data.js"></script>
+    <script src="../sources/js/search.js"></script>
+    <script src="../sources/js/session.js"></script>
+    <script src="../sources/js/i18n.js"></script>
+    <script src="../Articles/articles.js"></script>
+    <script src="../sources/js/isotope.js"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+<!-- Start of LiveChat (www.livechatinc.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 13623927;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechatinc.com/chat-with/13623927/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+
+  </body>
+
+</html>

@@ -1,0 +1,27 @@
+.compress-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0 28px;
+}
+
+.compress-level {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.compress-level:hover { border-color: var(--accent); }
+
+.compress-level--active {
+  border-color: var(--accent);
+  background: #fff5f5;
+}
+
+.compress-level input { accent-color: var(--accent); }

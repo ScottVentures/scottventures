@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Measured off PDFTools' own rendered pages (colors, type scale,
+     spacing, radii — the visual attributes a designer would read off any
+     site's dev tools) and rebuilt here as our own tokens/CSS. None of
+     their code or files are used. */
+  --brand-red: #e5322d;
+  --brand-red-hover: #bd060a;
+  --brand-red-soft: #fde4df;
+  --ink: #161616;
+  --ink-soft: #47474f;
+  --ink-faint: #707078;
+  --paper: #f5f5fa;
+  --divider: #d6d6df;
+  --divider-soft: #ebebf4;
+  --footer-ink: #292931;
+  --success: #1d9d58;
+  --warning: #ffb400;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: var(--paper);
+  --text: var(--ink);
+  --text-soft: var(--ink-soft);
+  --border: var(--divider);
+  --accent: var(--brand-red);
+  --accent-dark: var(--brand-red-hover);
+  --accent-contrast: #ffffff;
+  --danger: #bd060a;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(22, 22, 22, 0.08);
+  --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 20px 48px rgba(22, 22, 22, 0.16);
+
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--sans);
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--sans);
+}
+
+::selection {
+  background: rgba(229, 50, 45, 0.18);
+}

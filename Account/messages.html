@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../sources/images/favicon.png"/>
+    <link rel="alternate" type="application/rss+xml" title="ScottVentures RSS Feed" href="../feed.xml">
+    <title>ScottVentures - Messages</title>
+    <link href="../java/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../sources/css/style.css">
+    <link rel="stylesheet" href="../sources/css/electronics.css">
+    <link rel="stylesheet" href="../sources/css/vision.css">
+    <link rel="stylesheet" href="../Articles/articles.css">
+    <style>
+      .placeholder-wrap { max-width: 560px; margin: 0 auto; padding: 150px 20px 120px; text-align: center; }
+      .placeholder-wrap i { font-size: 48px; color: #ddd; margin-bottom: 20px; }
+      html.sv-dark .placeholder-wrap i { color: #444; }
+
+      .msgs-wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 110px 20px 60px;
+      }
+      .msgs-shell {
+        display: flex;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        overflow: hidden;
+        min-height: 520px;
+        background: #fff;
+      }
+      html.sv-dark .msgs-shell { background: #1f2328; border-color: #2c3138; }
+
+      .msgs-sidebar { width: 300px; flex-shrink: 0; border-right: 1px solid #eee; display: flex; flex-direction: column; }
+      html.sv-dark .msgs-sidebar { border-color: #2c3138; }
+      .msgs-sidebar-header { padding: 16px; border-bottom: 1px solid #eee; }
+      html.sv-dark .msgs-sidebar-header { border-color: #2c3138; }
+      .msgs-sidebar-header h4 { margin: 0 0 10px; font-size: 16px; }
+      #newConvoSearch { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 13px; box-sizing: border-box; }
+      #newConvoResults { max-height: 160px; overflow-y: auto; margin-top: 6px; }
+      #newConvoResults .msgs-user-result { padding: 8px 10px; cursor: pointer; border-radius: 6px; font-size: 13px; }
+      #newConvoResults .msgs-user-result:hover { background: #f5f5f5; }
+      html.sv-dark #newConvoResults .msgs-user-result:hover { background: #2a2e34; }
+
+      .msgs-convo-list { flex: 1; overflow-y: auto; }
+      .msgs-convo-item { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 14px 16px; cursor: pointer; border-bottom: 1px solid #f5f5f5; }
+      html.sv-dark .msgs-convo-item { border-color: #2a2e34; }
+      .msgs-convo-item:hover, .msgs-convo-item.active { background: #f7f7f7; }
+      html.sv-dark .msgs-convo-item:hover, html.sv-dark .msgs-convo-item.active { background: #2a2e34; }
+      .msgs-convo-name { font-weight: 600; font-size: 14px; }
+      .msgs-convo-preview { font-size: 12px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
+      .msgs-unread-dot { background: #f33f3f; color: #fff; font-size: 11px; border-radius: 999px; padding: 1px 7px; flex-shrink: 0; }
+
+      .msgs-thread { flex: 1; display: flex; flex-direction: column; }
+      .msgs-thread-header { padding: 16px; border-bottom: 1px solid #eee; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+      html.sv-dark .msgs-thread-header { border-color: #2c3138; }
+      .msgs-thread-body { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 4px; background: var(--msg-bg, transparent); }
+      .msgs-bubble-row { display: flex; flex-direction: column; margin-bottom: 8px; }
+      .msgs-bubble-row.mine { align-items: flex-end; }
+      .msgs-bubble-row.theirs { align-items: flex-start; }
+      .msgs-bubble-wrap { position: relative; max-width: 70%; }
+      .msgs-bubble { padding: 9px 13px; border-radius: 14px; font-size: 14px; line-height: 1.4; word-wrap: break-word; }
+      .msgs-bubble.mine { background: var(--msg-mine-bg, #f33f3f); color: var(--msg-mine-fg, #fff); border-bottom-right-radius: 4px; }
+      .msgs-bubble.theirs { background: var(--msg-theirs-bg, #f1f1f1); color: var(--msg-theirs-fg, #222); border-bottom-left-radius: 4px; }
+      html.sv-dark .msgs-bubble.theirs { background: var(--msg-theirs-bg, #2a2e34); color: var(--msg-theirs-fg, #eee); }
+      .msgs-bubble-time { font-size: 10px; opacity: .7; margin-top: 4px; }
+      .msgs-bubble img.msgs-attachment-img { max-width: 220px; max-height: 220px; border-radius: 8px; display: block; margin-top: 4px; cursor: pointer; }
+      .msgs-bubble a.msgs-attachment-file { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; padding: 6px 10px; border-radius: 8px; background: rgba(0,0,0,.08); color: inherit; text-decoration: none; font-size: 13px; }
+      .msgs-bubble a.msgs-attachment-file:hover { background: rgba(0,0,0,.15); }
+
+      .msgs-react-trigger { position: absolute; top: -12px; background: #fff; border: 1px solid #eee; border-radius: 999px; width: 24px; height: 24px; font-size: 12px; line-height: 1; display: none; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+      .msgs-bubble-row.mine .msgs-react-trigger { left: -30px; }
+      .msgs-bubble-row.theirs .msgs-react-trigger { right: -30px; }
+      html.sv-dark .msgs-react-trigger { background: #2a2e34; border-color: #3a3f46; color: #eee; }
+      .msgs-bubble-wrap:hover .msgs-react-trigger { display: flex; }
+      .msgs-react-picker { position: absolute; top: -38px; display: none; gap: 2px; background: #fff; border: 1px solid #eee; border-radius: 999px; padding: 4px 6px; box-shadow: 0 2px 8px rgba(0,0,0,.15); z-index: 5; }
+      .msgs-bubble-row.mine .msgs-react-picker { right: 0; }
+      .msgs-bubble-row.theirs .msgs-react-picker { left: 0; }
+      html.sv-dark .msgs-react-picker { background: #2a2e34; border-color: #3a3f46; }
+      .msgs-react-picker.open { display: flex; }
+      .msgs-react-picker span { cursor: pointer; padding: 2px 3px; border-radius: 6px; font-size: 15px; }
+      .msgs-react-picker span:hover { background: #f1f1f1; }
+      html.sv-dark .msgs-react-picker span:hover { background: #3a3f46; }
+      .msgs-reaction-pills { display: flex; gap: 4px; margin-top: 3px; flex-wrap: wrap; }
+      .msgs-reaction-pill { font-size: 11px; background: #f1f1f1; border-radius: 999px; padding: 1px 7px; cursor: pointer; border: 1px solid transparent; }
+      .msgs-reaction-pill.mine-reacted { border-color: #f33f3f; background: #fdeaea; }
+      html.sv-dark .msgs-reaction-pill { background: #2a2e34; }
+      html.sv-dark .msgs-reaction-pill.mine-reacted { background: #43272a; border-color: #f33f3f; }
+
+      .msgs-thread-composer { display: flex; align-items: flex-end; gap: 8px; padding: 14px; border-top: 1px solid #eee; }
+      html.sv-dark .msgs-thread-composer { border-color: #2c3138; }
+      .msgs-thread-composer textarea { flex: 1; resize: none; border: 1px solid #ddd; border-radius: 8px; padding: 9px 12px; font-size: 14px; min-height: 42px; max-height: 120px; }
+      .msgs-attach-btn { flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 16px; color: #666; }
+      .msgs-attach-btn:hover { background: #f5f5f5; }
+      html.sv-dark .msgs-attach-btn { background: #1f2328; border-color: #3a3f46; color: #ccc; }
+      .msgs-attach-preview { display: none; align-items: center; gap: 8px; padding: 0 14px 10px; font-size: 12px; color: #666; }
+      .msgs-attach-preview.active { display: flex; }
+      .msgs-attach-preview img { max-height: 48px; border-radius: 6px; }
+      .msgs-attach-preview button { border: none; background: none; color: #f33f3f; cursor: pointer; font-size: 12px; }
+      .msgs-empty-state { flex: 1; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px; text-align: center; padding: 20px; }
+
+      .msgs-theme-btn { border: 1px solid #ddd; background: #fff; border-radius: 6px; padding: 5px 9px; font-size: 12px; cursor: pointer; color: #555; }
+      html.sv-dark .msgs-theme-btn { background: #1f2328; border-color: #3a3f46; color: #ccc; }
+      .msgs-theme-menu { position: absolute; top: 100%; right: 20px; margin-top: 6px; background: #fff; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,.15); padding: 8px; display: none; z-index: 10; }
+      .msgs-theme-menu.open { display: block; }
+      html.sv-dark .msgs-theme-menu { background: #1f2328; border-color: #2c3138; }
+      .msgs-theme-option { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 6px; cursor: pointer; font-size: 13px; white-space: nowrap; }
+      .msgs-theme-option:hover { background: #f5f5f5; }
+      html.sv-dark .msgs-theme-option:hover { background: #2a2e34; }
+      .msgs-theme-swatch { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; border: 1px solid rgba(0,0,0,.1); }
+
+      @media (max-width: 700px) {
+        .msgs-shell { flex-direction: column; }
+        .msgs-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #eee; max-height: 280px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="">
+      <nav class="navbar navbar-expand-xl">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html"><img src="../sources/images/logo-nav.png" alt="ScottVentures logo" class="navbar-brand-logo"><h2>Scott<em>Ventures</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="../products.html">Articles</a></li>
+              <li class="nav-item"><a class="nav-link" href="../tutorials.html">Tutorials</a></li>
+              <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="../learning-materials.html">Learning Materials</a></li>
+              <li class="nav-item"><a class="nav-link" href="../contact.html">Contact Us</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="toolsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a><div class="dropdown-menu" aria-labelledby="toolsNavDropdown"><a class="dropdown-item" href="../scottpdf/index.html">ScottPDF <span class="dropdown-item-sub">Merge, split, convert PDFs</span></a><a class="dropdown-item" href="../scottimg/index.html">ScottIMG <span class="dropdown-item-sub">Compress, resize, edit images</span></a></div></li><li class="nav-item" id="account-nav-item">
+<div class="account-nav-wrap" id="accountNavWrap">
+<a class="nav-link" id="accountNavLink" href="login.html" data-login-href="login.html" data-home-href="../index.html">Account</a>
+</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div id="gateView" class="placeholder-wrap" style="display:none;">
+      <i class="fa fa-envelope-o"></i>
+      <h3>Messages</h3>
+      <p class="text-muted">You need to be logged in to view your messages.</p>
+      <a href="login.html" class="filled-button">Log In</a>
+    </div>
+
+    <div id="msgsView" class="msgs-wrap" style="display:none;">
+      <h2 style="margin-bottom: 20px;">Messages</h2>
+      <div class="msgs-shell">
+        <div class="msgs-sidebar">
+          <div class="msgs-sidebar-header">
+            <h4>New message</h4>
+            <input type="text" id="newConvoSearch" placeholder="Search members by name…">
+            <div id="newConvoResults"></div>
+          </div>
+          <div class="msgs-convo-list" id="convoList">
+            <p class="text-muted" style="padding:16px;font-size:13px;">Loading…</p>
+          </div>
+        </div>
+        <div class="msgs-thread">
+          <div id="threadEmpty" class="msgs-empty-state">Select a conversation, or search for a member above to start a new one.</div>
+          <div id="threadActive" style="display:none;flex:1;flex-direction:column;position:relative;">
+            <div class="msgs-thread-header">
+              <span id="threadHeaderName"></span>
+              <span style="position:relative;">
+                <button type="button" class="msgs-theme-btn" id="themeMenuBtn" title="Chat theme"><i class="fa fa-paint-brush"></i> Theme</button>
+                <div class="msgs-theme-menu" id="themeMenu">
+                  <div class="msgs-theme-option" data-theme="default"><span class="msgs-theme-swatch" style="background:#f33f3f;"></span>Classic Red</div>
+                  <div class="msgs-theme-option" data-theme="ocean"><span class="msgs-theme-swatch" style="background:#0a84ff;"></span>Ocean Blue</div>
+                  <div class="msgs-theme-option" data-theme="mint"><span class="msgs-theme-swatch" style="background:#12b886;"></span>Mint</div>
+                  <div class="msgs-theme-option" data-theme="sunset"><span class="msgs-theme-swatch" style="background:#ff7a45;"></span>Sunset</div>
+                  <div class="msgs-theme-option" data-theme="violet"><span class="msgs-theme-swatch" style="background:#7950f2;"></span>Violet</div>
+                  <div class="msgs-theme-option" data-theme="mono"><span class="msgs-theme-swatch" style="background:#333;"></span>Mono</div>
+                </div>
+              </span>
+            </div>
+            <div class="msgs-thread-body" id="threadBody"></div>
+            <div class="msgs-attach-preview" id="attachPreview">
+              <span id="attachPreviewThumb"></span>
+              <span id="attachPreviewName"></span>
+              <button type="button" id="attachPreviewRemove">Remove</button>
+            </div>
+            <form class="msgs-thread-composer" id="threadComposer">
+              <input type="file" id="attachInput" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf,text/plain,.doc,.docx,.zip" style="display:none;">
+              <button type="button" class="msgs-attach-btn" id="attachBtn" title="Attach a file"><i class="fa fa-paperclip"></i></button>
+              <textarea id="threadInput" placeholder="Write a message…" maxlength="2000"></textarea>
+              <button type="submit" class="filled-button">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="container">
+        <div class="row footer-main__row">
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Product</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../index.html">Home</a>
+              </li>
+              <li>
+                <a href="../products.html">Articles</a>
+              </li>
+              <li>
+                <a href="../tutorials.html">Tutorials</a>
+              </li>
+              <li>
+                <a href="../help/documentation.html">Tools</a>
+              </li>
+              <li>
+                <a href="../faq.html">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Resources</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../scottpdf/index.html">ScottVentures Desktop</a>
+              </li>
+              <li>
+                <a href="../scottimg/index.html">ScottVentures Mobile</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Solutions</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../contact.html">Business</a>
+              </li>
+              <li>
+                <a href="../learning-materials.html">Education</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Legal</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../help/security.html">Security</a>
+              </li>
+              <li>
+                <a href="../privacy-policy.html">Privacy policy</a>
+              </li>
+              <li>
+                <a href="../terms.html">Terms & conditions</a>
+              </li>
+              <li>
+                <a href="../help/cookies.html">Cookies</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Company</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="../about.html">About us</a>
+              </li>
+              <li>
+                <a href="../contact.html">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-big__lang">
+              <span class="lang__current">
+                <i class="ico ico--world"></i>
+                English <i class="ico ico--down-w"></i>
+              </span>
+              <ul class="lang__menu">
+                <li>
+                  <a href="/">
+                    <svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path fill="currentColor"
+                        d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z"
+                        class=""></path>
+                    </svg>
+                    English
+                  </a>
+                </li>
+                <li>
+                  <a href="/es">Español</a>
+                </li>
+                <li>
+                  <a href="/fr">Français</a>
+                </li>
+                <li>
+                  <a href="/de">Deutsch</a>
+                </li>
+                <li>
+                  <a href="/it">Italiano</a>
+                </li>
+                <li>
+                  <a href="/pt">Português</a>
+                </li>
+                <li>
+                  <a href="/ja">日本語</a>
+                </li>
+                <li>
+                  <a href="/ru">Pусский</a>
+                </li>
+                <li>
+                  <a href="/ko">한국어</a>
+                </li>
+                <li>
+                  <a href="/zh-cn">中文 (简体)</a>
+                </li>
+                <li>
+                  <a href="/zh-tw">中文 (繁體)</a>
+                </li>
+                <li>
+                  <a href="/ar">العربية</a>
+                </li>
+                <li>
+                  <a href="/bg">Български</a>
+                </li>
+                <li>
+                  <a href="/ca">Català</a>
+                </li>
+                <li>
+                  <a href="/nl">Nederlands</a>
+                </li>
+                <li>
+                  <a href="/el">Ελληνικά</a>
+                </li>
+                <li>
+                  <a href="/hi">हिन्दी</a>
+                </li>
+                <li>
+                  <a href="/id">Bahasa Indonesia</a>
+                </li>
+                <li>
+                  <a href="/ms">Bahasa Melayu</a>
+                </li>
+                <li>
+                  <a href="/pl">Polski</a>
+                </li>
+                <li>
+                  <a href="/sv">Svenska</a>
+                </li>
+                <li>
+                  <a href="/th">ภาษาไทย</a>
+                </li>
+                <li>
+                  <a href="/tr">Türkçe</a>
+                </li>
+                <li>
+                  <a href="/uk">Українська</a>
+                </li>
+                <li>
+                  <a href="/vi">Tiếng Việt</a>
+                </li>
+                <li>
+                  <a href="/sw">Kiswahili</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="footer-main__info" style="flex-wrap: wrap">
+              <div class="slogan">&copy;Scottventures 2026 &reg;- Your Tech Referal </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../sources/js/vendor/supabase.js"></script>
+    <script src="../sources/js/supabase-config.js"></script>
+    <script src="../sources/js/supabase-adapter.js"></script>
+    <script src="../java/jquery/jquery.min.js"></script>
+    <script src="../java/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../java/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../sources/js/custom.js"></script>
+    <script src="../sources/js/isotope.js"></script>
+    <script src="../sources/js/preferences.js"></script>
+    <script src="../sources/js/search-data.js"></script>
+    <script src="../sources/js/search.js"></script>
+    <script src="../sources/js/session.js"></script>
+    <script src="../sources/js/i18n.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var token = svGetToken();
+        if (!token) {
+          document.getElementById('gateView').style.display = 'block';
+          return;
+        }
+        document.getElementById('msgsView').style.display = 'block';
+
+        function escapeHtml(str) {
+          var div = document.createElement('div');
+          div.textContent = str;
+          return div.innerHTML;
+        }
+        function timeAgo(iso) {
+          var then = new Date(iso.replace(' ', 'T') + 'Z');
+          var s = Math.floor((Date.now() - then.getTime()) / 1000);
+          if (s < 60) return 'just now';
+          var m = Math.floor(s / 60); if (m < 60) return m + 'm ago';
+          var h = Math.floor(m / 60); if (h < 24) return h + 'h ago';
+          return Math.floor(h / 24) + 'd ago';
+        }
+
+        var currentOtherId = null;
+        var pendingAttachment = null; // { attachmentUrl, attachmentName, attachmentType }
+        var params = new URLSearchParams(window.location.search);
+        var initialWith = params.get('with');
+
+        function authHeaders() {
+          return { Authorization: 'Bearer ' + token };
+        }
+
+        // --- Chat theme picker ---
+        // Purely a look-and-feel preference, stored per browser — it
+        // doesn't affect what the other person sees on their end.
+        var CHAT_THEMES = {
+          default: { mineBg: '#f33f3f', mineFg: '#fff', theirsBg: '#f1f1f1', theirsFg: '#222', bg: 'transparent' },
+          ocean:   { mineBg: '#0a84ff', mineFg: '#fff', theirsBg: '#e7f3ff', theirsFg: '#10314f', bg: 'transparent' },
+          mint:    { mineBg: '#12b886', mineFg: '#fff', theirsBg: '#e6faf3', theirsFg: '#0b3d2e', bg: 'transparent' },
+          sunset:  { mineBg: '#ff7a45', mineFg: '#fff', theirsBg: '#fff1ea', theirsFg: '#5c2c10', bg: 'transparent' },
+          violet:  { mineBg: '#7950f2', mineFg: '#fff', theirsBg: '#f1edfe', theirsFg: '#2e1a63', bg: 'transparent' },
+          mono:    { mineBg: '#333',    mineFg: '#fff', theirsBg: '#e9e9e9', theirsFg: '#222', bg: 'transparent' }
+        };
+        var threadBody = document.getElementById('threadBody');
+        function applyTheme(name) {
+          var t = CHAT_THEMES[name] || CHAT_THEMES.default;
+          threadBody.style.setProperty('--msg-mine-bg', t.mineBg);
+          threadBody.style.setProperty('--msg-mine-fg', t.mineFg);
+          threadBody.style.setProperty('--msg-theirs-bg', t.theirsBg);
+          threadBody.style.setProperty('--msg-theirs-fg', t.theirsFg);
+          try { localStorage.setItem('sv_msg_theme', name); } catch (e) {}
+        }
+        (function () {
+          var saved = 'default';
+          try { saved = localStorage.getItem('sv_msg_theme') || 'default'; } catch (e) {}
+          applyTheme(saved);
+        })();
+        document.getElementById('themeMenuBtn').addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.getElementById('themeMenu').classList.toggle('open');
+        });
+        document.querySelectorAll('.msgs-theme-option').forEach(function (el) {
+          el.addEventListener('click', function () {
+            applyTheme(el.getAttribute('data-theme'));
+            document.getElementById('themeMenu').classList.remove('open');
+          });
+        });
+        document.addEventListener('click', function () {
+          document.getElementById('themeMenu').classList.remove('open');
+        });
+
+        // --- Attachments ---
+        var REACTION_EMOJIS = ['👍', '❤️', '😂', '😮', '😢', '👏'];
+        var attachBtn = document.getElementById('attachBtn');
+        var attachInput = document.getElementById('attachInput');
+        var attachPreview = document.getElementById('attachPreview');
+
+        attachBtn.addEventListener('click', function () { attachInput.click(); });
+        document.getElementById('attachPreviewRemove').addEventListener('click', function () {
+          clearAttachment();
+        });
+
+        function clearAttachment() {
+          pendingAttachment = null;
+          attachInput.value = '';
+          attachPreview.classList.remove('active');
+          document.getElementById('attachPreviewThumb').innerHTML = '';
+          document.getElementById('attachPreviewName').textContent = '';
+        }
+
+        attachInput.addEventListener('change', function () {
+          var file = attachInput.files[0];
+          if (!file) return;
+          if (file.size > 8 * 1024 * 1024) {
+            window.alert('That file is larger than 8MB — please choose a smaller one.');
+            clearAttachment();
+            return;
+          }
+          var formData = new FormData();
+          formData.append('file', file);
+          attachBtn.disabled = true;
+          fetch(AUTH_API_BASE_URL + '/api/messages/upload', {
+            method: 'POST',
+            headers: authHeaders(),
+            body: formData
+          })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              attachBtn.disabled = false;
+              if (!result.ok) {
+                window.alert(result.data.error || 'Could not upload that file.');
+                clearAttachment();
+                return;
+              }
+              pendingAttachment = result.data;
+              attachPreview.classList.add('active');
+              document.getElementById('attachPreviewName').textContent = result.data.attachmentName;
+              var thumb = document.getElementById('attachPreviewThumb');
+              if (result.data.attachmentType && result.data.attachmentType.indexOf('image/') === 0) {
+                thumb.innerHTML = '<img src="' + (/^https?:/.test(result.data.attachmentUrl) ? result.data.attachmentUrl : AUTH_API_BASE_URL + result.data.attachmentUrl) + '" alt="">';
+              } else {
+                thumb.innerHTML = '<i class="fa fa-file-o"></i>';
+              }
+            })
+            .catch(function () {
+              attachBtn.disabled = false;
+              window.alert('Could not reach the server to upload that file.');
+              clearAttachment();
+            });
+        });
+
+        function attachmentMarkup(m) {
+          if (!m.attachmentUrl) return '';
+          var fullUrl = /^https?:/.test(m.attachmentUrl) ? m.attachmentUrl : AUTH_API_BASE_URL + m.attachmentUrl;
+          if (m.attachmentType && m.attachmentType.indexOf('image/') === 0) {
+            return '<a href="' + fullUrl + '" target="_blank" rel="noopener"><img class="msgs-attachment-img" src="' + fullUrl + '" alt="' + escapeHtml(m.attachmentName || 'attachment') + '"></a>';
+          }
+          return '<a class="msgs-attachment-file" href="' + fullUrl + '" target="_blank" rel="noopener"><i class="fa fa-file-o"></i> ' + escapeHtml(m.attachmentName || 'Download file') + '</a>';
+        }
+
+        function reactionPillsMarkup(m) {
+          if (!m.reactions || !m.reactions.length) return '';
+          var counts = {};
+          m.reactions.forEach(function (r) {
+            if (!counts[r.emoji]) counts[r.emoji] = { count: 0, mine: false };
+            counts[r.emoji].count++;
+            if (r.fromMe) counts[r.emoji].mine = true;
+          });
+          return '<div class="msgs-reaction-pills">' + Object.keys(counts).map(function (emoji) {
+            var c = counts[emoji];
+            return '<span class="msgs-reaction-pill' + (c.mine ? ' mine-reacted' : '') + '" data-message-id="' + m.id + '" data-emoji="' + emoji + '">' + emoji + ' ' + c.count + '</span>';
+          }).join('') + '</div>';
+        }
+
+        function sendReaction(messageId, emoji) {
+          fetch(AUTH_API_BASE_URL + '/api/messages/' + messageId + '/react', {
+            method: 'POST',
+            headers: Object.assign({ 'Content-Type': 'application/json' }, authHeaders()),
+            body: JSON.stringify({ emoji: emoji })
+          })
+            .then(function () { if (currentOtherId) openThread(currentOtherId); });
+        }
+
+        function loadConversations() {
+          fetch(AUTH_API_BASE_URL + '/api/messages/conversations', { headers: authHeaders() })
+            .then(function (r) { return r.json(); })
+            .then(function (data) { renderConversations(data.conversations); })
+            .catch(function () {
+              document.getElementById('convoList').innerHTML = '<p class="text-muted" style="padding:16px;font-size:13px;">Couldn\'t reach the server.</p>';
+            });
+        }
+
+        function renderConversations(conversations) {
+          var list = document.getElementById('convoList');
+          if (!conversations.length) {
+            list.innerHTML = '<p class="text-muted" style="padding:16px;font-size:13px;">No conversations yet — search for a member above to say hello.</p>';
+            return;
+          }
+          list.innerHTML = conversations.map(function (c) {
+            var preview = (c.lastFromMe ? 'You: ' : '') + c.lastMessage;
+            return '<div class="msgs-convo-item' + (c.userId === currentOtherId ? ' active' : '') + '" data-user-id="' + c.userId + '">' +
+              '<div><div class="msgs-convo-name">' + escapeHtml(c.name) + '</div><div class="msgs-convo-preview">' + escapeHtml(preview) + '</div></div>' +
+              (c.unreadCount > 0 ? '<span class="msgs-unread-dot">' + c.unreadCount + '</span>' : '') +
+              '</div>';
+          }).join('');
+          list.querySelectorAll('.msgs-convo-item').forEach(function (el) {
+            el.addEventListener('click', function () { openThread(el.getAttribute('data-user-id')); });
+          });
+        }
+
+        function openThread(otherId) {
+          currentOtherId = otherId;
+          document.getElementById('threadEmpty').style.display = 'none';
+          document.getElementById('threadActive').style.display = 'flex';
+
+          fetch(AUTH_API_BASE_URL + '/api/messages/with/' + otherId, { headers: authHeaders() })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (!result.ok) return;
+              document.getElementById('threadHeaderName').textContent = result.data.otherUser.name;
+              var body = document.getElementById('threadBody');
+              body.innerHTML = result.data.messages.map(function (m) {
+                var side = m.fromMe ? 'mine' : 'theirs';
+                var pickerOptions = REACTION_EMOJIS.map(function (e) { return '<span data-emoji="' + e + '">' + e + '</span>'; }).join('');
+                return '<div class="msgs-bubble-row ' + side + '">' +
+                  '<div class="msgs-bubble-wrap">' +
+                    '<div class="msgs-bubble ' + side + '">' +
+                      (m.body ? escapeHtml(m.body) : '') +
+                      attachmentMarkup(m) +
+                      '<div class="msgs-bubble-time">' + timeAgo(m.createdAt) + '</div>' +
+                    '</div>' +
+                    '<span class="msgs-react-trigger" data-message-id="' + m.id + '"><i class="fa fa-smile-o"></i></span>' +
+                    '<div class="msgs-react-picker" data-message-id="' + m.id + '">' + pickerOptions + '</div>' +
+                  '</div>' +
+                  reactionPillsMarkup(m) +
+                '</div>';
+              }).join('');
+              body.scrollTop = body.scrollHeight;
+
+              body.querySelectorAll('.msgs-react-trigger').forEach(function (el) {
+                el.addEventListener('click', function (e) {
+                  e.stopPropagation();
+                  var picker = body.querySelector('.msgs-react-picker[data-message-id="' + el.getAttribute('data-message-id') + '"]');
+                  body.querySelectorAll('.msgs-react-picker').forEach(function (p) { if (p !== picker) p.classList.remove('open'); });
+                  picker.classList.toggle('open');
+                });
+              });
+              body.querySelectorAll('.msgs-react-picker span').forEach(function (el) {
+                el.addEventListener('click', function (e) {
+                  e.stopPropagation();
+                  var messageId = el.parentElement.getAttribute('data-message-id');
+                  sendReaction(messageId, el.getAttribute('data-emoji'));
+                });
+              });
+              body.querySelectorAll('.msgs-reaction-pill').forEach(function (el) {
+                el.addEventListener('click', function () {
+                  sendReaction(el.getAttribute('data-message-id'), el.getAttribute('data-emoji'));
+                });
+              });
+
+              loadConversations();
+            });
+        }
+
+        document.getElementById('threadComposer').addEventListener('submit', function (e) {
+          e.preventDefault();
+          var input = document.getElementById('threadInput');
+          var text = input.value.trim();
+          if ((!text && !pendingAttachment) || !currentOtherId) return;
+          var payload = Object.assign({ recipientId: currentOtherId, body: text }, pendingAttachment || {});
+          fetch(AUTH_API_BASE_URL + '/api/messages', {
+            method: 'POST',
+            headers: Object.assign({ 'Content-Type': 'application/json' }, authHeaders()),
+            body: JSON.stringify(payload)
+          })
+            .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+            .then(function (result) {
+              if (result.ok) {
+                input.value = '';
+                clearAttachment();
+                openThread(currentOtherId);
+              } else {
+                window.alert(result.data.error || 'Could not send that message.');
+              }
+            });
+        });
+
+        // --- New conversation search ---
+        var searchInput = document.getElementById('newConvoSearch');
+        var searchResults = document.getElementById('newConvoResults');
+        var searchTimer;
+        searchInput.addEventListener('input', function () {
+          clearTimeout(searchTimer);
+          var q = searchInput.value.trim();
+          if (!q) { searchResults.innerHTML = ''; return; }
+          searchTimer = setTimeout(function () {
+            fetch(AUTH_API_BASE_URL + '/api/messages/users?q=' + encodeURIComponent(q), { headers: authHeaders() })
+              .then(function (r) { return r.json(); })
+              .then(function (data) {
+                searchResults.innerHTML = data.users.map(function (u) {
+                  return '<div class="msgs-user-result" data-user-id="' + u.id + '">' + escapeHtml(u.name) + '</div>';
+                }).join('') || '<div class="text-muted" style="padding:6px 10px;font-size:12px;">No members found.</div>';
+                searchResults.querySelectorAll('.msgs-user-result').forEach(function (el) {
+                  el.addEventListener('click', function () {
+                    openThread(el.getAttribute('data-user-id'));
+                    searchInput.value = '';
+                    searchResults.innerHTML = '';
+                  });
+                });
+              });
+          }, 250);
+        });
+
+        loadConversations();
+        if (initialWith) {
+          openThread(initialWith);
+        }
+        // Light polling so a new incoming message shows up without a
+        // manual refresh, same pattern as contact-inbox.html.
+        setInterval(function () {
+          loadConversations();
+          if (currentOtherId) openThread(currentOtherId);
+        }, 15000);
+      });
+    </script>
+  </body>
+</html>

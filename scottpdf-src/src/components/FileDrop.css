@@ -1,0 +1,49 @@
+.file-drop {
+  text-align: center;
+  padding: 56px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  transition: background .15s ease;
+}
+
+.file-drop--over {
+  background: var(--brand-red-soft);
+}
+
+.file-drop__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 80px;
+  min-width: 330px;
+  max-width: 60vw;
+  padding: 24px 48px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--brand-red);
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: background-color .1s linear;
+}
+
+.file-drop__btn:hover {
+  background-color: var(--brand-red-hover);
+}
+
+.file-drop__btn:active {
+  background: var(--ink);
+}
+
+@media (max-width: 501px) {
+  .file-drop__btn { min-width: 0; width: 100%; max-width: 100%; }
+}
+
+.file-drop__hint {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--ink-faint);
+}

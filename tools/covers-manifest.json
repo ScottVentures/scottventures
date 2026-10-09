@@ -1,0 +1,569 @@
+[
+ {
+  "slug": "api-vs-sdk",
+  "kind": "articles",
+  "title": "API vs SDK: The Difference That Actually Matters",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "article1",
+  "kind": "articles",
+  "title": "Unleashing Your Creativity: Tapping into the Well of Imagination",
+  "category": "Unleashing Your Creativity",
+  "meta": ""
+ },
+ {
+  "slug": "article2",
+  "kind": "articles",
+  "title": "The Science of Effective Learning: Strategies for Retaining Information and Boosting Memory",
+  "category": "The Science of Effective Learning",
+  "meta": ""
+ },
+ {
+  "slug": "bandwidth-vs-latency",
+  "kind": "articles",
+  "title": "Bandwidth vs Latency: Why Fast Internet Can Still Feel Slow",
+  "category": "Networking",
+  "meta": ""
+ },
+ {
+  "slug": "browser-devtools",
+  "kind": "articles",
+  "title": "Browser DevTools Tricks Most People Skip",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "clipboard-managers",
+  "kind": "articles",
+  "title": "Why You Should Be Using a Clipboard Manager",
+  "category": "Productivity",
+  "meta": ""
+ },
+ {
+  "slug": "cpu-cache",
+  "kind": "articles",
+  "title": "Why Your CPU Has Three Levels of Cache",
+  "category": "Hardware",
+  "meta": ""
+ },
+ {
+  "slug": "cron-jobs",
+  "kind": "articles",
+  "title": "Cron Syntax Without the Cheat Sheet",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "dns-explained",
+  "kind": "articles",
+  "title": "DNS Explained: What Happens Between Typing a URL and Loading a Page",
+  "category": "Networking",
+  "meta": ""
+ },
+ {
+  "slug": "docker-basics",
+  "kind": "articles",
+  "title": "What Docker Containers Actually Isolate",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "env-variables",
+  "kind": "articles",
+  "title": "Environment Variables: The Right Way to Store Secrets",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "file-permissions",
+  "kind": "articles",
+  "title": "Understanding File Permissions Without the Confusion",
+  "category": "Linux",
+  "meta": ""
+ },
+ {
+  "slug": "git",
+  "kind": "articles",
+  "title": "Git Aliases You Didn't Know You Needed",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "http-status-codes",
+  "kind": "articles",
+  "title": "HTTP Status Codes You'll Actually Encounter",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "json-vs-xml",
+  "kind": "articles",
+  "title": "JSON vs XML: Why One Won",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "keyboard-shortcuts",
+  "kind": "articles",
+  "title": "Keyboard Shortcuts That Save the Most Time",
+  "category": "Productivity",
+  "meta": ""
+ },
+ {
+  "slug": "markdown-tips",
+  "kind": "articles",
+  "title": "Markdown Tricks Beyond Bold and Italics",
+  "category": "Productivity",
+  "meta": ""
+ },
+ {
+  "slug": "motherboard",
+  "kind": "articles",
+  "title": "Understanding the Motherboard: A 5-Minute Tour",
+  "category": "Hardware",
+  "meta": ""
+ },
+ {
+  "slug": "password-managers",
+  "kind": "articles",
+  "title": "How Password Managers Actually Keep You Safer",
+  "category": "Security",
+  "meta": ""
+ },
+ {
+  "slug": "power-button",
+  "kind": "articles",
+  "title": "What Actually Happens When You Press the Power Button",
+  "category": "Hardware",
+  "meta": ""
+ },
+ {
+  "slug": "ram-vs-storage",
+  "kind": "articles",
+  "title": "RAM vs Storage: Why More of One Doesn't Fix the Other",
+  "category": "Hardware",
+  "meta": ""
+ },
+ {
+  "slug": "regex",
+  "kind": "articles",
+  "title": "Regex, Explained Without the Headache",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "router-basics",
+  "kind": "articles",
+  "title": "What a Router Actually Does, in Plain English",
+  "category": "Networking",
+  "meta": ""
+ },
+ {
+  "slug": "sata-vs-nvme",
+  "kind": "articles",
+  "title": "SATA vs NVMe: Why Your SSD Choice Actually Matters",
+  "category": "Hardware",
+  "meta": ""
+ },
+ {
+  "slug": "screen-resolution",
+  "kind": "articles",
+  "title": "Screen Resolution and DPI, Explained Simply",
+  "category": "Hardware",
+  "meta": ""
+ },
+ {
+  "slug": "semantic-versioning",
+  "kind": "articles",
+  "title": "Semantic Versioning, Decoded",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "ssh-keys",
+  "kind": "articles",
+  "title": "SSH Keys: How They Actually Work (And Why Passwords Aren't Enough)",
+  "category": "Coding",
+  "meta": ""
+ },
+ {
+  "slug": "ssl-tls",
+  "kind": "articles",
+  "title": "What Happens During an HTTPS Handshake",
+  "category": "Networking",
+  "meta": ""
+ },
+ {
+  "slug": "terminal-tricks",
+  "kind": "articles",
+  "title": "5 Terminal Tricks That'll Save You Hours",
+  "category": "Tips & Tricks",
+  "meta": ""
+ },
+ {
+  "slug": "two-factor-auth",
+  "kind": "articles",
+  "title": "Two-Factor Auth: What It's Actually Protecting You From",
+  "category": "Security Basics",
+  "meta": ""
+ },
+ {
+  "slug": "vpn-explained",
+  "kind": "articles",
+  "title": "What a VPN Actually Hides (and What It Doesn't)",
+  "category": "Networking",
+  "meta": ""
+ },
+ {
+  "slug": "algorithms-sorting",
+  "kind": "tutorials",
+  "title": "Sorting Algorithms, Compared",
+  "category": "Tutorial",
+  "meta": "Tutorial · Computer Science"
+ },
+ {
+  "slug": "angular",
+  "kind": "tutorials",
+  "title": "with Angular and Bootstrap",
+  "category": "Mastering Web App Development",
+  "meta": ""
+ },
+ {
+  "slug": "authentication-jwt",
+  "kind": "tutorials",
+  "title": "Authentication with JWTs, Step by Step",
+  "category": "Tutorial",
+  "meta": "Tutorial · Security"
+ },
+ {
+  "slug": "ci-cd-pipelines",
+  "kind": "tutorials",
+  "title": "Setting Up Your First CI/CD Pipeline",
+  "category": "Tutorial",
+  "meta": "Tutorial · DevOps"
+ },
+ {
+  "slug": "css-flexbox-grid",
+  "kind": "tutorials",
+  "title": "CSS Flexbox and Grid, Side by Side",
+  "category": "Tutorial",
+  "meta": "Tutorial · Web Development"
+ },
+ {
+  "slug": "data-structures",
+  "kind": "tutorials",
+  "title": "Data Structures Demystified",
+  "category": "Tutorial",
+  "meta": "Tutorial · Computer Science Fundamentals"
+ },
+ {
+  "slug": "django-rest-api",
+  "kind": "tutorials",
+  "title": "Building RESTful APIs with Django",
+  "category": "Tutorial",
+  "meta": "Tutorial · Python / Backend"
+ },
+ {
+  "slug": "docker-compose",
+  "kind": "tutorials",
+  "title": "Multi-Container Apps with Docker Compose",
+  "category": "Tutorial",
+  "meta": "Tutorial · DevOps"
+ },
+ {
+  "slug": "git-branching-workflow",
+  "kind": "tutorials",
+  "title": "A Git Branching Workflow That Scales",
+  "category": "Tutorial",
+  "meta": "Tutorial · Developer Tools"
+ },
+ {
+  "slug": "mongodb-basics",
+  "kind": "tutorials",
+  "title": "Working with MongoDB",
+  "category": "Tutorial",
+  "meta": "Tutorial · Databases"
+ },
+ {
+  "slug": "nextjs-basics",
+  "kind": "tutorials",
+  "title": "Mastering Next.js",
+  "category": "Tutorial",
+  "meta": "Tutorial · Web Development"
+ },
+ {
+  "slug": "nodejs-express-api",
+  "kind": "tutorials",
+  "title": "Building APIs with Node.js and Express",
+  "category": "Tutorial",
+  "meta": "Tutorial · Backend Development"
+ },
+ {
+  "slug": "python-automation",
+  "kind": "tutorials",
+  "title": "Automating Tasks with Python",
+  "category": "Tutorial",
+  "meta": "Tutorial · Python"
+ },
+ {
+  "slug": "python-flask",
+  "kind": "tutorials",
+  "title": "Building Web Apps with Flask",
+  "category": "Tutorial",
+  "meta": "Tutorial · Backend Development"
+ },
+ {
+  "slug": "react-basics",
+  "kind": "tutorials",
+  "title": "Mastering React",
+  "category": "Tutorial",
+  "meta": "Tutorial · JavaScript / Frontend"
+ },
+ {
+  "slug": "regex-tutorial",
+  "kind": "tutorials",
+  "title": "Regular Expressions, Hands-On",
+  "category": "Tutorial",
+  "meta": "Tutorial · Programming"
+ },
+ {
+  "slug": "responsive-design",
+  "kind": "tutorials",
+  "title": "Building Responsive Layouts That Actually Work",
+  "category": "Tutorial",
+  "meta": "Tutorial · Web Development"
+ },
+ {
+  "slug": "rest-vs-graphql",
+  "kind": "tutorials",
+  "title": "Building Your First GraphQL API",
+  "category": "Tutorial",
+  "meta": "Tutorial · Backend Development"
+ },
+ {
+  "slug": "sql-joins",
+  "kind": "tutorials",
+  "title": "SQL Joins, Actually Explained",
+  "category": "Tutorial",
+  "meta": "Tutorial · Databases"
+ },
+ {
+  "slug": "state-management-redux",
+  "kind": "tutorials",
+  "title": "State Management with Redux",
+  "category": "Tutorial",
+  "meta": "Tutorial · Web Development"
+ },
+ {
+  "slug": "testing-with-jest",
+  "kind": "tutorials",
+  "title": "Testing JavaScript with Jest",
+  "category": "Tutorial",
+  "meta": "Tutorial · Testing"
+ },
+ {
+  "slug": "typescript-basics",
+  "kind": "tutorials",
+  "title": "TypeScript for JavaScript Developers",
+  "category": "Tutorial",
+  "meta": "Tutorial · Programming Languages"
+ },
+ {
+  "slug": "vue-basics",
+  "kind": "tutorials",
+  "title": "Mastering Vue.js",
+  "category": "Tutorial",
+  "meta": "Tutorial · Web Development"
+ },
+ {
+  "slug": "websockets",
+  "kind": "tutorials",
+  "title": "Real-Time Apps with WebSockets",
+  "category": "Tutorial",
+  "meta": "Tutorial · Web Development"
+ },
+ {
+  "slug": "agile-project-management",
+  "kind": "materials",
+  "title": "Agile Project Management for Developers",
+  "category": "Learning Material",
+  "meta": "Learning Material · Project Management"
+ },
+ {
+  "slug": "api-design-principles",
+  "kind": "materials",
+  "title": "API Design Principles That Age Well",
+  "category": "Learning Material",
+  "meta": "Learning Material · Software Engineering"
+ },
+ {
+  "slug": "blockchain-fundamentals",
+  "kind": "materials",
+  "title": "Blockchain Fundamentals Without the Hype",
+  "category": "Learning Material",
+  "meta": "Learning Material · Blockchain"
+ },
+ {
+  "slug": "cloud-fundamentals",
+  "kind": "materials",
+  "title": "Cloud Fundamentals: Servers, Storage, and Deployment",
+  "category": "Learning Material",
+  "meta": "Guide · Infrastructure Fundamentals"
+ },
+ {
+  "slug": "containerization-kubernetes",
+  "kind": "materials",
+  "title": "Containerization and Kubernetes, Demystified",
+  "category": "Learning Material",
+  "meta": "Learning Material · DevOps"
+ },
+ {
+  "slug": "cybersecurity-essentials",
+  "kind": "materials",
+  "title": "Cybersecurity Essentials Every Developer Should Know",
+  "category": "Learning Material",
+  "meta": "Learning Material · Security"
+ },
+ {
+  "slug": "data-privacy-compliance",
+  "kind": "materials",
+  "title": "Data Privacy and Compliance: GDPR and Beyond",
+  "category": "Learning Material",
+  "meta": "Learning Material · Privacy & Compliance"
+ },
+ {
+  "slug": "data-structures-algorithms-guide",
+  "kind": "materials",
+  "title": "Data Structures and Algorithms: The Complete Picture",
+  "category": "Learning Material",
+  "meta": "Learning Material · Computer Science"
+ },
+ {
+  "slug": "databases-101",
+  "kind": "materials",
+  "title": "Databases 101: Relational Design and Fast Queries",
+  "category": "Learning Material",
+  "meta": "Guide · Database Fundamentals"
+ },
+ {
+  "slug": "deep-learning",
+  "kind": "materials",
+  "title": "Deep Learning: Neural Networks and AI Applications",
+  "category": "Learning Material",
+  "meta": "Guide · Machine Learning Fundamentals"
+ },
+ {
+  "slug": "devops-fundamentals",
+  "kind": "materials",
+  "title": "DevOps Fundamentals: Culture, Tools, and Practice",
+  "category": "Learning Material",
+  "meta": "Learning Material · DevOps"
+ },
+ {
+  "slug": "frontend-performance",
+  "kind": "materials",
+  "title": "Frontend Performance: What Actually Slows Pages Down",
+  "category": "Learning Material",
+  "meta": "Learning Material · Web Performance"
+ },
+ {
+  "slug": "linux-command-line-guide",
+  "kind": "materials",
+  "title": "The Linux Command Line: A Practical Guide",
+  "category": "Learning Material",
+  "meta": "Learning Material · Systems"
+ },
+ {
+  "slug": "machine-learning-basics",
+  "kind": "materials",
+  "title": "Machine Learning Basics: From Data to Predictions",
+  "category": "Learning Material",
+  "meta": "Learning Material · Machine Learning"
+ },
+ {
+  "slug": "mobile-development-guide",
+  "kind": "materials",
+  "title": "Mobile Development: Native vs Cross-Platform",
+  "category": "Learning Material",
+  "meta": "Learning Material · Mobile Development"
+ },
+ {
+  "slug": "networking-fundamentals",
+  "kind": "materials",
+  "title": "Networking Fundamentals: How Data Actually Travels",
+  "category": "Learning Material",
+  "meta": "Learning Material · Networking"
+ },
+ {
+  "slug": "operating-systems-101",
+  "kind": "materials",
+  "title": "Operating Systems 101: Processes, Threads, and Memory",
+  "category": "Learning Material",
+  "meta": "Learning Material · Computer Science"
+ },
+ {
+  "slug": "secure-coding",
+  "kind": "materials",
+  "title": "Secure Coding: Building Robust and Resilient Software",
+  "category": "Learning Material",
+  "meta": "Guide · Application Security Fundamentals"
+ },
+ {
+  "slug": "serverless-computing",
+  "kind": "materials",
+  "title": "Serverless Computing: What You Gain and What You Give Up",
+  "category": "Learning Material",
+  "meta": "Learning Material · Cloud Computing"
+ },
+ {
+  "slug": "software-architecture-patterns",
+  "kind": "materials",
+  "title": "Software Architecture Patterns Explained",
+  "category": "Learning Material",
+  "meta": "Learning Material · Software Engineering"
+ },
+ {
+  "slug": "system-design-basics",
+  "kind": "materials",
+  "title": "System Design Basics: Scaling From One User to a Million",
+  "category": "Learning Material",
+  "meta": "Learning Material · System Design"
+ },
+ {
+  "slug": "technical-interview-prep",
+  "kind": "materials",
+  "title": "Technical Interview Preparation: A Study Plan",
+  "category": "Learning Material",
+  "meta": "Learning Material · Career"
+ },
+ {
+  "slug": "testing-strategies",
+  "kind": "materials",
+  "title": "Testing Strategies: Unit, Integration, and End-to-End",
+  "category": "Learning Material",
+  "meta": "Learning Material · Software Engineering"
+ },
+ {
+  "slug": "ui-ux-principles",
+  "kind": "materials",
+  "title": "UI/UX Principles Every Developer Should Understand",
+  "category": "Learning Material",
+  "meta": "Learning Material · Design"
+ },
+ {
+  "slug": "version-control",
+  "kind": "materials",
+  "title": "Version Control Beyond the Basics",
+  "category": "Learning Material",
+  "meta": "Guide · Git & Team Workflows"
+ },
+ {
+  "slug": "web-developers-handbook",
+  "kind": "materials",
+  "title": "The Complete Web Developer's Handbook",
+  "category": "Learning Material",
+  "meta": "Guide · HTML, CSS & JavaScript Fundamentals"
+ }
+]

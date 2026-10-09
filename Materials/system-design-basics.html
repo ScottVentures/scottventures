@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Load balancing, caching, and database scaling — the concepts that let an app handle far more traffic than it started with.">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon"  href="../sources/images/favicon.png"/>
+    <link rel="alternate" type="application/rss+xml" title="ScottVentures RSS Feed" href="../feed.xml">
+    <title>ScottVentures - System Design Basics: Scaling From One User to a Million</title>
+
+    <link href="../java/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../sources/js/vendor/supabase.js"></script>
+    <script src="../sources/js/supabase-config.js"></script>
+    <script src="../sources/js/supabase-adapter.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5694698390278360"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../sources/css/style.css">
+    <link rel="stylesheet" href="../sources/css/electronics.css">
+    <link rel="stylesheet" href="../sources/css/vision.css">
+    <link rel="stylesheet" href="../Articles/articles.css">
+    <style>
+      .material-body { max-width: 820px; margin: 0 auto; padding: 60px 20px 90px; }
+      .material-body h2 { margin-top: 40px; margin-bottom: 16px; font-size: 24px; }
+      .material-body h2:first-child { margin-top: 0; }
+      .material-body p { line-height: 1.75; color: #444; margin-bottom: 18px; }
+      .material-body ul, .material-body ol { line-height: 1.75; color: #444; margin-bottom: 18px; padding-left: 22px; }
+      .material-body pre { background: #1e1e1e; color: #e6e6e6; padding: 16px 18px; border-radius: 6px; overflow-x: auto; margin-bottom: 20px; font-size: 13px; }
+      .material-body code { background: #f1f1f1; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+      .material-body pre code { background: none; padding: 0; }
+      .material-meta { color: #999; font-size: 13px; margin-bottom: 30px; }
+      html.sv-dark .material-body p, html.sv-dark .material-body ul, html.sv-dark .material-body ol { color: #c7c7c7; }
+      html.sv-dark .material-body code { background: #2a2f36; color: #eee; }
+    </style>
+      <meta property="og:image" content="../sources/images/covers/materials/system-design-basics.webp">
+    <meta property="og:title" content="ScottVentures - System Design Basics: Scaling From One User to a Million">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../sources/images/covers/materials/system-design-basics.webp">
+  </head>
+
+  <body>
+
+    <div id="preloader">
+        <div class="jumper"><div></div><div></div><div></div></div>
+    </div>
+
+    <header class="">
+      <nav class="navbar navbar-expand-xl">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html"><img src="../sources/images/logo-nav.png" alt="ScottVentures logo" class="navbar-brand-logo"><h2>Scott<em>Ventures</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../products.html">Articles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../tutorials.html">Tutorials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../about.html">About Us</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="../learning-materials.html">Learning Materials
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="toolsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a><div class="dropdown-menu" aria-labelledby="toolsNavDropdown"><a class="dropdown-item" href="../scottpdf/index.html">ScottPDF <span class="dropdown-item-sub">Merge, split, convert PDFs</span></a><a class="dropdown-item" href="../scottimg/index.html">ScottIMG <span class="dropdown-item-sub">Compress, resize, edit images</span></a></div></li><li class="nav-item" id="account-nav-item">
+<div class="account-nav-wrap" id="accountNavWrap">
+<a class="nav-link" id="accountNavLink" href="../Account/login.html" data-login-href="../Account/login.html" data-home-href="../index.html">Account</a>
+</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="page-heading products-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>Learning Material</h4>
+              <h2>System Design Basics: Scaling From One User to a Million</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="material-body">
+      <p class="material-meta">Learning Material · System Design</p>
+      <img class="sv-cover" src="../sources/images/covers/materials/system-design-basics.webp" alt="Cover: System Design Basics: Scaling From One User to a Million" width="1200" height="630">
+
+
+      <h2>Stage one: one server, one database</h2>
+      <p>Every system starts here, and for a while, it's genuinely enough — a single server running the app and a single database handling reads and writes. Don't add complexity ahead of an actual, measured bottleneck; premature scaling is its own kind of waste.</p>
+
+      <h2>Stage two: separate the database</h2>
+      <p>The first real bottleneck is usually the database competing with the app for the same server's resources. Moving the database to its own server is a simple, high-value first step, letting each scale independently of the other.</p>
+
+      <h2>Stage three: add a load balancer</h2>
+      <pre><code>            ┌── App Server 1
+Client ──→ LB ─┼── App Server 2
+            └── App Server 3</code></pre>
+      <p>A load balancer distributes incoming requests across multiple app servers, so one server going down doesn't take the whole app offline, and traffic beyond one server's capacity gets spread out. This is also the point where "sessions stored in server memory" becomes a real bug — a user's second request might land on a different server that's never heard of their session, which is why session data needs to move to a shared store (Redis, the database) at this stage.</p>
+
+      <h2>Stage four: cache what's expensive to recompute</h2>
+      <pre><code>function getUser(id) {
+  const cached = redis.get(`user:${id}`)
+  if (cached) return cached
+
+  const user = db.query('SELECT * FROM users WHERE id = ?', [id])
+  redis.set(`user:${id}`, user, { ex: 300 })
+  return user
+}</code></pre>
+      <p>A cache trades a small amount of staleness for a large amount of speed — this example serves from Redis for 5 minutes before hitting the database again. Caching the results of expensive queries or computations is usually the single highest-leverage performance change available, because it reduces load on your slowest component (the database) directly.</p>
+
+      <h2>Stage five: scale the database itself</h2>
+      <p>Once one database server can't keep up, two common patterns emerge: <strong>read replicas</strong> (copies that handle read queries, while the primary handles writes — useful since most apps read far more than they write), and <strong>sharding</strong> (splitting data across multiple databases by some key, like user ID range — necessary once a single database's data no longer fits comfortably on one machine).</p>
+
+      <div class="callout">
+        <strong>CDNs handle static content for free, essentially.</strong> Images, CSS, JS bundles, and other static files served from a CDN's edge locations near the user, instead of your own origin server, remove a huge share of traffic from your infrastructure before it ever reaches your app servers.
+      </div>
+
+      <h2>The pattern underneath all of this</h2>
+      <p>Every stage above follows the same idea: identify the actual bottleneck, then add just enough infrastructure to remove it — not infrastructure for problems you don't have yet. Systems that scale well tend to grow this way, one measured bottleneck at a time, rather than being over-engineered for a million users on day one.</p>
+
+    </div>
+
+    <!-- Reactions -->
+    <div class="tn-reactions" data-reactions="material-system-design-basics">
+      <button type="button" class="filled-button" data-vote="like">&#128077; <span data-count="like">0</span></button>
+      <button type="button" class="filled-button tn-dislike" data-vote="dislike">&#128078; <span data-count="dislike">0</span></button>
+    </div>
+
+    <!-- Comments -->
+    <div class="tn-comments" data-comments="material-system-design-basics">
+      <h3>Comments</h3>
+      <div data-comment-list class="tn-comment-list"></div>
+      <form data-comment-form class="tn-comment-form">
+        <input type="text" name="name" placeholder="Name" required>
+        <textarea name="message" placeholder="Say something..." required></textarea>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="filled-button">Post comment</button>
+        <p data-comment-status class="tn-comment-status"></p>
+      </form>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="row footer-main__row">
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Product</div>
+            <ul class="footer-main__nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../products.html">Articles</a></li>
+              <li><a href="../tutorials.html">Tutorials</a></li>
+              <li><a href="../help/documentation.html">Tools</a></li>
+              <li><a href="../faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Resources</div>
+            <ul class="footer-main__nav">
+              <li><a href="../scottpdf/index.html">ScottVentures Desktop</a></li>
+              <li><a href="../scottimg/index.html">ScottVentures Mobile</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Solutions</div>
+            <ul class="footer-main__nav">
+              <li><a href="../contact.html">Business</a></li>
+              <li><a href="../learning-materials.html">Education</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Legal</div>
+            <ul class="footer-main__nav">
+              <li><a href="../help/security.html">Security</a></li>
+              <li><a href="../privacy-policy.html">Privacy policy</a></li>
+              <li><a href="../terms.html">Terms &amp; conditions</a></li>
+              <li><a href="../help/cookies.html">Cookies</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Company</div>
+            <ul class="footer-main__nav">
+              <li><a href="../about.html">About us</a></li>
+              <li><a href="../contact.html">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-big__lang">
+              <span class="lang__current">
+                <i class="ico ico--world"></i>
+                English <i class="ico ico--down-w"></i>
+              </span>
+              <ul class="lang__menu">
+                <li><a href="/"><svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z" class=""></path></svg> English</a></li>
+                <li><a href="/es">Español</a></li>
+                <li><a href="/fr">Français</a></li>
+                <li><a href="/de">Deutsch</a></li>
+                <li><a href="/it">Italiano</a></li>
+                <li><a href="/pt">Português</a></li>
+                <li><a href="/ja">日本語</a></li>
+                <li><a href="/ru">Pусский</a></li>
+                <li><a href="/ko">한국어</a></li>
+                <li><a href="/zh-cn">中文 (简体)</a></li>
+                <li><a href="/zh-tw">中文 (繁體)</a></li>
+                <li><a href="/ar">العربية</a></li>
+                <li><a href="/bg">Български</a></li>
+                <li><a href="/ca">Català</a></li>
+                <li><a href="/nl">Nederlands</a></li>
+                <li><a href="/el">Ελληνικά</a></li>
+                <li><a href="/hi">हिन्दी</a></li>
+                <li><a href="/id">Bahasa Indonesia</a></li>
+                <li><a href="/ms">Bahasa Melayu</a></li>
+                <li><a href="/pl">Polski</a></li>
+                <li><a href="/sv">Svenska</a></li>
+                <li><a href="/th">ภาษาไทย</a></li>
+                <li><a href="/tr">Türkçe</a></li>
+                <li><a href="/uk">Українська</a></li>
+                <li><a href="/vi">Tiếng Việt</a></li>
+                <li><a href="/sw">Kiswahili</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="footer-main__info" style="flex-wrap: wrap">
+              <div class="slogan">&copy;Scottventures 2026 &reg;- Your Tech Referal </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../java/jquery/jquery.min.js"></script>
+    <script src="../java/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../java/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../sources/js/custom.js"></script>
+    <script src="../sources/js/preferences.js"></script>
+    <script src="../sources/js/search-data.js"></script>
+    <script src="../sources/js/search.js"></script>
+    <script src="../sources/js/session.js"></script>
+    <script src="../sources/js/i18n.js"></script>
+    <script src="../Articles/articles.js"></script>
+    <script src="../sources/js/isotope.js"></script>
+
+  </body>
+
+</html>

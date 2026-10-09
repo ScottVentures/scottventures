@@ -1,0 +1,203 @@
+.sp-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.sp-header {
+  border-bottom: 1px solid var(--divider-soft);
+  position: relative;
+  z-index: 40;
+}
+
+.sp-nav {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 32px;
+}
+
+.sp-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.sp-brand svg { color: var(--brand-red); }
+.sp-brand b { color: var(--brand-red); font-weight: 800; }
+
+.sp-quicklinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  flex: 1;
+}
+
+.sp-quicklinks > a {
+  color: var(--ink);
+  white-space: nowrap;
+}
+.sp-quicklinks > a:hover { color: var(--brand-red); }
+
+.sp-navdrop {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sp-navdrop__trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.sp-navdrop:hover .sp-navdrop__trigger { color: var(--brand-red); }
+
+.sp-megamenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 12px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 24px 32px;
+  text-transform: none;
+  max-width: 90vw;
+}
+
+.sp-megamenu__title {
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  margin-bottom: 12px;
+}
+
+.sp-megamenu__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.sp-megamenu__link svg { color: var(--brand-red); flex-shrink: 0; }
+.sp-megamenu__link:hover { color: var(--brand-red); }
+
+.sp-header__back {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-faint);
+  border: 1px solid var(--divider);
+  border-radius: 999px;
+  padding: 8px 16px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color .15s ease, color .15s ease;
+}
+.sp-header__back:hover {
+  color: var(--brand-red);
+  border-color: var(--brand-red);
+}
+
+.sp-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.sp-footer {
+  border-top: 1px solid var(--divider-soft);
+  background: var(--footer-ink);
+  color: #c4c4cc;
+  padding: 48px 24px 24px;
+}
+
+.sp-footer__grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr repeat(4, 1fr);
+  gap: 32px;
+}
+
+.sp-footer__brand .sp-brand { color: #fff; margin-bottom: 12px; }
+.sp-footer__brand .sp-brand b { color: var(--brand-red); }
+.sp-footer__brand p {
+  font-size: 14px;
+  line-height: 22px;
+  max-width: 280px;
+  color: #9a9aa4;
+}
+
+.sp-footer__title {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  margin-bottom: 14px;
+}
+
+.sp-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sp-footer__col a {
+  font-size: 14px;
+  color: #c4c4cc;
+}
+.sp-footer__col a:hover { color: #fff; }
+
+.sp-footer__bottom {
+  max-width: 1180px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  text-align: center;
+  font-size: 13px;
+  color: #8b8b96;
+}
+
+@media (max-width: 900px) {
+  .sp-footer__grid { grid-template-columns: repeat(2, 1fr); }
+  .sp-footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 900px) {
+  .sp-quicklinks > a:not(.sp-navdrop) { display: none; }
+  .sp-megamenu { grid-template-columns: repeat(2, 180px); left: 0; transform: none; }
+}
+
+@media (max-width: 640px) {
+  .sp-nav { padding: 0 16px; gap: 12px; }
+  .sp-header__back { display: none; }
+  .sp-main { padding: 24px 16px 60px; }
+  .sp-megamenu { grid-template-columns: 1fr; position: fixed; left: 12px; right: 12px; width: auto; }
+}

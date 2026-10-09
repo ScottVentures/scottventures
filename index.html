@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="ScottVentures — short, direct explainers on hardware, coding tricks, and hands-on tutorials, written for people who don't have twenty minutes to spare.">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon"  href="sources/images/favicon.png"/>
+    <link rel="alternate" type="application/rss+xml" title="ScottVentures RSS Feed" href="feed.xml">
+    <title>ScottVentures</title>
+
+     <!-- Bootstrap core CSS -->
+    <link href="java/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!--
+
+      <!-- Popper js -->
+      <script src="sources/js/vendor/supabase.js"></script>
+      <script src="sources/js/supabase-config.js"></script>
+      <script src="sources/js/supabase-adapter.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
+        crossorigin="anonymous"></script>
+    <!-- Addsence -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5694698390278360"
+     crossorigin="anonymous"></script>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="sources/css/style.css">
+    <link rel="stylesheet" href="sources/css/electronics.css">
+    <link rel="stylesheet" href="sources/css/vision.css">
+    <link rel="stylesheet" href="Articles/articles.css">
+    <link rel="stylesheet" href="sources/css/flex-slider.css">
+    <link rel="stylesheet" href="java/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="java/owlcarousel/assets/owl.theme.default.min.css">
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-xl">
+        <div class="container">
+          <a class="navbar-brand me-auto" href="index.html"><img src="sources/images/logo-nav.png" alt="ScottVentures logo" class="navbar-brand-logo"><h2>Scott<em>Ventures</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="products.html">Articles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tutorials.html">Tutorials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="learning-materials.html">Learning Materials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="toolsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a><div class="dropdown-menu" aria-labelledby="toolsNavDropdown"><a class="dropdown-item" href="scottpdf/index.html">ScottPDF <span class="dropdown-item-sub">Merge, split, convert PDFs</span></a><a class="dropdown-item" href="scottimg/index.html">ScottIMG <span class="dropdown-item-sub">Compress, resize, edit images</span></a></div></li><li class="nav-item" id="account-nav-item">
+<div class="account-nav-wrap" id="accountNavWrap">
+<a class="nav-link" id="accountNavLink" href="Account/login.html" data-login-href="Account/login.html" data-home-href="index.html">Account</a>
+</div>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner header-text">
+      <div class="owl-banner owl-carousel">
+        <div class="banner-item banner-item-01">
+          <div class="text-content">
+            <h4>WELCOME TO ScottVentures</h4>
+            <h2>SERVING YOU WITH THE BEST</h2>
+          </div>
+        </div>
+        <div class="banner-item banner-item-02">
+          <div class="text-content">
+            <h4>WELCOME TO ScottVentures</h4>
+            <h2>TOP CLASS ARTICLES</h2>
+          </div>
+        </div>
+        <div class="banner-item banner-item-03">
+          <div class="text-content">
+            <h4>WELCOME TO ScottVentures</h4>
+            <h2>HELPFULL TUTORIALS</h2>
+          </div>
+        </div>
+        <!-- Video slide (disabled until a showreel exists): add sources/videos/showreel.mp4, then move the markup below back into the carousel.
+        <div class="banner-item banner-item-video">
+          <video class="banner-video" muted playsinline preload="metadata" poster="sources/images/slide_01.jpg">
+            <source src="sources/videos/showreel.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="banner-sound-toggle is-muted" title="Toggle sound" aria-label="Toggle video sound">
+            <i class="fa fa-volume-off"></i>
+          </button>
+          <div class="text-content">
+            <h4>WELCOME TO ScottVentures</h4>
+            <h2>SEE IT IN ACTION</h2>
+          </div>
+        </div>
+        -->
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <div class="latest-products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <strong><h2><i>Latest Articles</i></h2></strong>
+              <a href="products.html" class="btn btn-primary">View All Articles<i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Articles/article1.html"><img src="sources/images/covers/articles/article1.webp" alt="Cover: In a World of Creativity and Innovation" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Articles/article1.html"><h4>Unleashing Your Creativity: Tapping into the Well of Imagination</h4></a>
+                <p>Uncover strategies to ignite your creative spark, foster innovation, and overcome creative blocks, empowering you to generate fresh ideas and approach challenges with a creative mindset..</p>
+                <div data-reactions-mini="article1" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Articles/article1.html" class="filled-button">Read More</a>
+                <!--<h1><span id="reviewScore">Review (0)</span></h1>
+                <button onclick="increaseReviewScore()">Add Review</button>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Articles/article2.html"><img src="sources/images/covers/articles/article2.webp" alt="Cover: The Science of Effective Learning: Strategies for Retaining Information and Boosting Memory" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Articles/article2.html"><h4>The Science of Effective Learning: Strategies for Retaining Information and Boosting Memory</h4></a>
+                <p>Explore evidence-based learning techniques, memory-enhancement strategies, and cognitive principles that can optimize your learning experience and improve information retention.</p>
+                <div data-reactions-mini="article2" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Articles/article2.html" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Articles/regex.html"><img src="sources/images/covers/articles/regex.webp" alt="Cover: Regex, Explained Without the Headache - ScottVentures" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Articles/regex.html"><h4>Regex, Explained Without the Headache</h4></a>
+                <p>A plain-English tour of the cryptic-looking symbols in regular expressions, and why they're worth learning.</p>
+                <div data-reactions-mini="regex" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Articles/regex.html" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+         <!-- Latest Ends Here -->
+    
+          <div class="latest-products">
+          <div class="container">
+          <div class="row">
+          <div class="col-md-12">
+          <div class="section-heading">
+              <strong><i><h2>Popular Tutorials</h2></i></strong>
+              <a href="products.html" class="btn btn-primary">Read More Tutorials<i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Tutorials/react-basics.html"><img src="sources/images/covers/tutorials/react-basics.webp" alt="Cover: ScottVentures - Mastering React" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Tutorials/react-basics.html"><h4>Mastering React: Building Dynamic User Interfaces with the Most Popular JavaScript Library</h4></a>
+                <p>Dive deep into React.js and learn how to build powerful and interactive user interfaces using components, state management, and the virtual DOM.</p>
+                <div data-reactions-mini="master-react" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Tutorials/react-basics.html" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Tutorials/data-structures.html"><img src="sources/images/covers/tutorials/data-structures.webp" alt="Cover: ScottVentures - Data Structures Demystified" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Tutorials/data-structures.html"><h4>Data Structures Demystified: Understanding the Fundamentals for Efficient Programming</h4></a>
+                <p>Explore fundamental data structures like arrays, linked lists, stacks, queues, and trees, and grasp their practical implementation to write efficient and optimized code.</p>
+                  <div data-reactions-mini="data-structures" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Tutorials/data-structures.html" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Tutorials/django-rest-api.html"><img src="sources/images/covers/tutorials/django-rest-api.webp" alt="Cover: ScottVentures - Building RESTful APIs with Django" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Tutorials/django-rest-api.html"><h4>Building RESTful APIs with Django: Creating Web Services for Seamless Application Integration</h4></a>
+                <p>Discover how to design and implement RESTful APIs using Django, allowing seamless communication and integration between different software applications.</p>
+                <div data-reactions-mini="restful-api" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Tutorials/django-rest-api.html" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!-- Tutorials Ends Here -->
+    <div class="latest-products">
+          <div class="container">
+          <div class="row">
+          <div class="col-md-12">
+          <div class="section-heading">
+              <strong><i><h2>Learning Materials</h2></i></strong>
+              <a href="learning-materials.html" class="btn btn-primary">Read More Materials<i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Materials/web-developers-handbook.html"><img src="sources/images/covers/materials/web-developers-handbook.webp" alt="Cover: ScottVentures - The Complete Web Developer's Handbook" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Materials/web-developers-handbook.html"><h4>The Complete Web Developer's Handbook: Modern Tools and Techniques for Building Dynamic Websites</h4></a>
+                <p>Dive into the essential tools, technologies, and best practices used by professional web developers, from HTML, CSS, and JavaScript to frameworks like React, Vue, and Angular.</p>
+                <div data-reactions-mini="wed-develop" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Materials/web-developers-handbook.html" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Materials/deep-learning.html"><img src="sources/images/covers/materials/deep-learning.webp" alt="Cover: ScottVentures - Deep Learning: Neural Networks and AI Applications" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Materials/deep-learning.html"><h4>Deep Learning: Neural Networks and Artificial Intelligence Applications</h4></a>
+                <p>Unveil the concepts and applications of deep learning, understanding neural networks, convolutional networks, recurrent networks, and applying them to solve real-world problems.</p>
+                <div data-reactions-mini="deep-learning" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Materials/deep-learning.html" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="Materials/secure-coding.html"><img src="sources/images/covers/materials/secure-coding.webp" alt="Cover: ScottVentures - Secure Coding: Building Robust Systems" loading="lazy" width="1200" height="630" style="height:auto"></a>
+              <div class="down-content">
+                <a href="Materials/secure-coding.html"><h4>Secure Coding: Building Robust and Resilient Software Systems</h4></a>
+                <p>Gain knowledge in secure coding practices, mitigating common vulnerabilities such as injection attacks, cross-site scripting, and implementing proper authentication and authorization techniques.</p>
+                <div data-reactions-mini="secure-coding" class="tn-mini-reactions">
+                  &#128077; <span data-mini-count="like">0</span> &nbsp; &#128078; <span data-mini-count="dislike">0</span>
+                </div>
+                <a href="Materials/secure-coding.html" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!-- Learning Ends Here -->
+    
+    <div class="best-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>About ScottVentures</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>Short, direct explainers — no fluff</h4>
+              <p>ScottVentures started as a running list of "wait, how does that actually work?" moments. Every post is written to leave you with something you can actually use, in five minutes or less.</p>
+              <ul class="featured-list">
+                <li><a href="about.html">Hardware explained clearly</a></li>
+                <li><a href="about.html">Coding tricks worth remembering</a></li>
+                <li><a href="tutorials.html">Hands-on tutorials</a></li>
+                <li><a href="learning-materials.html">Curated learning materials</a></li>
+                <li><a href="about.html">No padded intros, no filler</a></li>
+                <li><a href="contact.html">Open to guest post pitches</a></li>
+              </ul>
+              <a href="about.html" class="filled-button">Read More</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="sources/images/feature-image.jpg" alt="Laptop and notebook on a desk, representing the ScottVentures writing process">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <div class="row">
+                <div class="col-md-8">
+                  <h4>Quality &amp; Unique <em>ScottVentures</em> Content and Services</h4>
+                  <p>Elevate your expertise with ScottVentures: Unveiling Your Potential, One Skill at a Time.</p>
+                </div>
+                <div class="col-md-4">
+                  <a href="Account/register.html" class="filled-button">Register Here</a>
+                  <a href="forum.html" class="filled-button" style="margin-left:10px;">Visit the Forum</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Footer -->
+    <div class="footer-main">
+      <div class="container">
+        <div class="row footer-main__row">
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Product</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="products.html">Articles</a>
+              </li>
+              <li>
+                <a href="tutorials.html">Tutorials</a>
+              </li>
+              <li>
+                <a href="./help/documentation.html">Tools</a>
+              </li>
+              <li>
+                <a href="faq.html">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Resources</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="./scottpdf/index.html">ScottVentures Desktop</a>
+              </li>
+              <li>
+                <a href="./scottimg/index.html">ScottVentures Mobile</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Solutions</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="./contact.html">Business</a>
+              </li>
+              <li>
+                <a href="./learning-materials.html">Education</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Legal</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="./help/security.html">Security</a>
+              </li>
+              <li>
+                <a href="privacy-policy.html">Privacy policy</a>
+              </li>
+              <li>
+                <a href="terms.html">Terms & conditions</a>
+              </li>
+              <li>
+                <a href="./help/cookies.html">Cookies</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+            <div class="footer-main__title">Company</div>
+            <ul class="footer-main__nav">
+              <li>
+                <a href="about.html">About us</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-big__lang">
+              <span class="lang__current">
+                <i class="ico ico--world"></i>
+                English <i class="ico ico--down-w"></i>
+              </span>
+              <ul class="lang__menu">
+                <li>
+                  <a href="/">
+                    <svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path fill="currentColor"
+                        d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z"
+                        class=""></path>
+                    </svg>
+                    English
+                  </a>
+                </li>
+                <li>
+                  <a href="/es">Español</a>
+                </li>
+                <li>
+                  <a href="/fr">Français</a>
+                </li>
+                <li>
+                  <a href="/de">Deutsch</a>
+                </li>
+                <li>
+                  <a href="/it">Italiano</a>
+                </li>
+                <li>
+                  <a href="/pt">Português</a>
+                </li>
+                <li>
+                  <a href="/ja">日本語</a>
+                </li>
+                <li>
+                  <a href="/ru">Pусский</a>
+                </li>
+                <li>
+                  <a href="/ko">한국어</a>
+                </li>
+                <li>
+                  <a href="/zh-cn">中文 (简体)</a>
+                </li>
+                <li>
+                  <a href="/zh-tw">中文 (繁體)</a>
+                </li>
+                <li>
+                  <a href="/ar">العربية</a>
+                </li>
+                <li>
+                  <a href="/bg">Български</a>
+                </li>
+                <li>
+                  <a href="/ca">Català</a>
+                </li>
+                <li>
+                  <a href="/nl">Nederlands</a>
+                </li>
+                <li>
+                  <a href="/el">Ελληνικά</a>
+                </li>
+                <li>
+                  <a href="/hi">हिन्दी</a>
+                </li>
+                <li>
+                  <a href="/id">Bahasa Indonesia</a>
+                </li>
+                <li>
+                  <a href="/ms">Bahasa Melayu</a>
+                </li>
+                <li>
+                  <a href="/pl">Polski</a>
+                </li>
+                <li>
+                  <a href="/sv">Svenska</a>
+                </li>
+                <li>
+                  <a href="/th">ภาษาไทย</a>
+                </li>
+                <li>
+                  <a href="/tr">Türkçe</a>
+                </li>
+                <li>
+                  <a href="/uk">Українська</a>
+                </li>
+                <li>
+                  <a href="/vi">Tiếng Việt</a>
+                </li>
+                <li>
+                  <a href="/sw">Kiswahili</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="footer-main__info" style="flex-wrap: wrap">
+              <div class="slogan">&copy;Scottventures 2026 &reg;- Your Tech Referal </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="java/jquery/jquery.min.js"></script>
+    <script src="java/owlcarousel/owl.carousel.min.js"></script>
+    <script src="java/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="java/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="sources/js/custom.js"></script>
+    <script src="sources/js/preferences.js"></script>
+    <script src="sources/js/search-data.js"></script>
+    <script src="sources/js/search.js"></script>
+    <script src="sources/js/session.js"></script>
+    <script src="sources/js/i18n.js"></script>
+    <script src="Articles/articles.js"></script>
+    <script src="sources/js/vision.js"></script>
+    <script src="sources/js/edge.js"></script>
+    <script src="sources/js/isotope.js"></script>
+    <script src="sources/js/vector.js"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+    <script>
+      let score = 0;
+
+  function increaseReviewScore() {
+    score++;
+    updateReviewScore();
+  }
+
+  function updateReviewScore() {
+    const reviewScoreElement = document.getElementById("reviewScore");
+    reviewScoreElement.textContent = score;
+  }
+  </script>
+    
+
+<!-- Start of LiveChat (www.livechatinc.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 13623927;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechatinc.com/chat-with/13623927/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+
+  </body>
+
+</html>

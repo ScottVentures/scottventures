@@ -1,0 +1,12 @@
+node_modules/
+.env
+Backend/.env
+Backend/data/
+uploads/
+.tmp-snap/
+_to_delete/
+tools/__pycache__/
+tools/_preview/
+*.log
+.DS_Store
+__pycache__/

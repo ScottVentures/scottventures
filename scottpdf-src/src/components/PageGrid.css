@@ -1,0 +1,89 @@
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 18px;
+  padding: 4px;
+}
+
+.page-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  cursor: grab;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .1s ease;
+}
+
+.page-card--over {
+  border-color: var(--accent);
+  transform: scale(1.02);
+}
+
+.page-card--selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(243, 63, 63, 0.25);
+}
+
+.page-card__thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.page-card__thumb img {
+  width: 100%;
+  display: block;
+  transition: transform .2s ease;
+}
+
+.page-card__check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+.page-card__check--on {
+  background: var(--accent);
+  border-color: #fff;
+}
+
+.page-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 2px 0;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.page-card__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.page-card__actions button {
+  border: none;
+  background: none;
+  color: var(--text-soft);
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.page-card__actions button:hover {
+  color: var(--accent);
+  background: var(--surface-muted);
+}

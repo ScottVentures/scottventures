@@ -1,0 +1,289 @@
+/* Articles — shared styling for reactions, comments, and long-form
+   article content. Matches Project2 (SkillScroll) palette:
+   accent #f33f3f, dark text #1e1e1e. Used by every page in /Articles/. */
+
+.article-content { text-align: left; }
+.article-content h1 { font-size: 26px; font-weight: 500; color: #1e1e1e; margin: 10px 0 16px; }
+.article-content h2 { font-size: 22px; font-weight: 500; color: #1e1e1e; margin: 30px 0 12px; }
+.article-content h2.quote {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 400;
+  color: #f33f3f;
+  border-left: 3px solid #f33f3f;
+  padding-left: 14px;
+  margin: 26px 0 10px;
+}
+.article-content p { font-size: 15px; line-height: 1.8; color: #666; margin-bottom: 14px; }
+.article-content p.highlight { font-size: 16px; font-style: italic; color: #1e1e1e; }
+.article-content span.highlight { color: #f33f3f; font-weight: 500; }
+.article-content code {
+  background: #f7f7f7;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 13px;
+  color: #f33f3f;
+}
+.article-content ul { margin: 0 0 14px 20px; }
+.article-content li { font-size: 15px; line-height: 1.8; color: #666; margin-bottom: 6px; }
+.article-content .callout {
+  background: #fff6f4;
+  border-left: 3px solid #f33f3f;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin: 18px 0;
+  font-size: 14px;
+  color: #555;
+}
+.article-date { color: #999; font-size: 13px; margin-bottom: 20px; }
+
+/* Reactions */
+.tn-reactions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
+}
+.tn-reactions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 92px;
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+.reaction-icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+}
+.tn-reactions button.active {
+  background-color: #121212;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.7);
+}
+.tn-reactions button:disabled { opacity: 0.6; cursor: default; }
+.tn-dislike { background-color: #6f6f6f !important; }
+.tn-dislike:hover { background-color: #121212 !important; }
+.tn-reactions [data-reactions-status] { flex-basis: 100%; margin: 0; }
+
+/* Comments */
+.tn-comments {
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+.tn-comments h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1e1e1e;
+  margin-bottom: 20px;
+}
+.tn-comment-list { margin-bottom: 24px; }
+.tn-comment {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 14px 0;
+}
+.tn-comment.is-owner { background: #fff6f4; padding: 14px; border-radius: 6px; border-bottom: none; margin-bottom: 8px; }
+.tn-comment .tn-comment-name { font-weight: 600; color: #1e1e1e; font-size: 14px; }
+.tn-comment .tn-owner-badge {
+  background: #f33f3f;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+}
+.tn-comment .tn-comment-date { color: #aaa; font-size: 12px; margin-left: 8px; }
+.tn-comment .tn-comment-message { color: #666; font-size: 14px; margin-top: 4px; }
+.tn-comment-empty { color: #999; font-size: 14px; font-style: italic; }
+.tn-comment-replies { margin-left: 24px; margin-top: 6px; }
+.tn-reply-btn {
+  border: none;
+  background: none;
+  color: #f33f3f;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 0 0;
+  display: block;
+}
+.tn-reply-form { margin-top: 10px; padding: 12px; background: #f9f9f9; border-radius: 6px; }
+.tn-reply-form .tn-reply-name,
+.tn-reply-form .tn-reply-message {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 13px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+.tn-reply-form .tn-reply-message { min-height: 60px; resize: vertical; }
+.tn-reply-actions { display: flex; gap: 8px; }
+.tn-reply-submit, .tn-reply-cancel {
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+.tn-reply-submit { background: #f33f3f; color: #fff; }
+.tn-reply-cancel { background: #eee; color: #555; }
+html.sv-dark .tn-reply-form { background: #232830; }
+html.sv-dark .tn-reply-form .tn-reply-name,
+html.sv-dark .tn-reply-form .tn-reply-message {
+  background: #1a1e24; color: #eee; border-color: #3a3f47;
+}
+html.sv-dark .tn-reply-cancel { background: #333; color: #ccc; }
+
+.tn-comment-form input[type="text"],
+.tn-comment-form textarea {
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+.tn-comment-form textarea { min-height: 90px; resize: vertical; }
+.tn-comment-form button { border: none; cursor: pointer; }
+.tn-comment-status { font-size: 13px; margin-top: 10px; }
+.tn-comment-status.success { color: #2e8b57; }
+.tn-comment-status.error { color: #f33f3f; }
+
+.tn-mini-reactions,
+.card-reactions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #f33f3f;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.tn-mini-reactions { margin: 12px 0 16px; }
+.article-read-time,
+.article-meta-separator,
+.article-published-date {
+  position: static !important;
+  color: #555 !important;
+  font-size: inherit !important;
+  font-weight: 400 !important;
+}
+.article-meta-separator { margin-left: -5px; }
+.card-meta .card-reactions { margin-left: 12px; }
+.mini-reaction {
+  display: inline-flex;
+  position: static !important;
+  align-items: center;
+  gap: 4px;
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: 500;
+}
+.mini-reaction .reaction-icon { width: 17px; height: 17px; }
+
+/* Overrides the template's generic `.down-content span` positioning rule. */
+.product-item .down-content .tn-mini-reactions,
+.product-item .down-content .card-reactions {
+  position: static;
+  right: auto;
+  bottom: auto;
+}
+.product-item .down-content .tn-mini-reactions span,
+.product-item .down-content .card-reactions span {
+  position: static !important;
+  right: auto !important;
+  bottom: auto !important;
+  color: inherit !important;
+}
+
+/* Keep article-list cards visually consistent even when titles and excerpts
+   have different lengths. The lower metadata row and action now share one
+   baseline across each desktop row. */
+@media (min-width: 768px) {
+  .products .product-item,
+  .latest-products .product-item {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px);
+    min-height: 500px;
+  }
+  .products .product-item > a:first-child,
+  .latest-products .product-item > a:first-child {
+    display: block;
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+  .products .product-item > a:first-child img,
+  .latest-products .product-item > a:first-child img {
+    display: block;
+    height: auto;
+    aspect-ratio: 1200 / 630;
+    object-fit: cover;
+  }
+  .products .product-item .down-content,
+  .latest-products .product-item .down-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  .products .product-item .filled-button,
+  .latest-products .product-item .filled-button {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+}
+
+/* Article and Learning Material cards used to be positioned by Isotope's
+   JS masonry engine, which measured card widths after page load and could
+   settle on 2 columns instead of 3 (see sources/js/custom.js). Laying the
+   grid out in plain CSS instead means the column count is correct from
+   the very first paint, with nothing left to race. */
+.filters-content .row.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0;
+}
+.filters-content .row.grid > [class*="col-"] {
+  width: auto;
+  max-width: none;
+  flex: none;
+  padding: 0;
+  margin: 0;
+}
+.filters-content .row.grid > [class*="col-"].is-hidden {
+  display: none;
+}
+@media (max-width: 991px) {
+  .filters-content .row.grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+@media (max-width: 576px) {
+  .filters-content .row.grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Generated cover image shown under the page heading (tools/generate-covers.py) */
+.sv-cover { display: block; max-width: 100%; height: auto; border-radius: 12px; margin: 1rem 0 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); }

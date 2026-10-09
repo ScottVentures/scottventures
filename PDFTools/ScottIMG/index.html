@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#e5322d">
+  <meta name="description" content="Edit, resize, compress and convert images with ScottIMG. Simple image tools in one place.">
+  <title>ScottIMG | All image tools</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./index.html" aria-label="ScottIMG home"><span class="brand-icon">S</span><span>Scott<span class="brand-light">IMG</span></span></a>
+    <details class="all-tools"><summary>All image tools <span class="chevron">⌄</span></summary><div class="tools-menu">
+      <a href="#compress">Compress IMAGE</a><a href="#resize">Resize IMAGE</a><a href="#crop">Crop IMAGE</a><a href="#convert">Convert to JPG</a><a href="#edit">Photo editor</a><a href="#upscale">Upscale</a><a href="#remove-background">Remove background</a><a href="#meme">Meme generator</a><a href="#rotate">Rotate IMAGE</a><a href="#watermark">Watermark IMAGE</a><a href="#blur">Blur area</a><a href="#html-to-image">HTML to IMAGE</a>
+    </div></details><span class="space"></span><a class="quiet-link" href="#about">About</a><a class="signup" href="#tools">Get started</a><button class="menu-button" aria-label="Jump to tools" onclick="document.querySelector('#tools').scrollIntoView({behavior:'smooth'})">⠿</button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR ONLINE IMAGE WORKSPACE</div>
+      <h1>Every tool you need<br>to edit images <span>in one place</span></h1>
+      <p>Quickly compress, resize, crop and convert images with ScottIMG. Free, simple and ready when you are.</p>
+      <a class="hero-cta" href="#tools">Explore all tools <span>↓</span></a>
+      <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="shape shape-a"></div><div class="shape shape-b"></div><div class="shape shape-c"></div><div class="shape shape-d"></div><div class="art-note">IMAGE<br><b>STUDIO</b><span>✳</span></div><div class="art-tile tile-a">↗</div><div class="art-tile tile-b">◒</div><div class="art-tile tile-c">✦</div></div>
+    </section>
+    <section id="tools" class="catalog">
+      <div class="section-heading"><div><div class="eyebrow small">MADE FOR YOUR EVERYDAY WORKFLOW</div><h2>All image tools</h2></div><div class="tool-count"><span>12</span> tools to make images work for you</div></div>
+      <nav class="filters" aria-label="Filter image tools">
+        <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="optimize">Optimize</button><button class="filter" data-filter="create">Create</button><button class="filter" data-filter="edit">Edit</button><button class="filter" data-filter="convert">Convert</button><button class="filter" data-filter="security">Security</button>
+      </nav>
+      <div class="tool-grid">
+        <a class="tool-card" data-cat="optimize" href="#compress"><span class="tool-icon red">⇩</span><strong>Compress IMAGE</strong><span>Reduce file size while keeping your images crisp.</span></a>
+        <a class="tool-card" data-cat="edit" href="#resize"><span class="tool-icon blue">↗</span><strong>Resize IMAGE</strong><span>Set new dimensions in pixels and resize in seconds.</span></a>
+        <a class="tool-card" data-cat="edit" href="#crop"><span class="tool-icon violet">⌗</span><strong>Crop IMAGE</strong><span>Crop your image using precise pixel coordinates.</span></a>
+        <a class="tool-card" data-cat="convert" href="#convert"><span class="tool-icon green">JPG</span><strong>Convert to JPG</strong><span>Convert images into JPG, PNG, WebP and more.</span></a>
+        <a class="tool-card" data-cat="create" href="#edit"><span class="tool-icon orange">✦</span><strong>Photo editor</strong><span>Give your image a quick color and contrast boost.</span></a>
+        <a class="tool-card" data-cat="optimize" href="#upscale"><span class="tool-icon blue">⤢</span><strong>Upscale IMAGE <em>NEW</em></strong><span>Enlarge your image up to four times its size.</span></a>
+        <a class="tool-card" data-cat="optimize" href="#remove-background"><span class="tool-icon green">◉</span><strong>Remove background</strong><span>Make a solid color background transparent.</span></a>
+        <a class="tool-card" data-cat="create" href="#meme"><span class="tool-icon yellow">☺</span><strong>Meme generator</strong><span>Add classic captions to your favorite pictures.</span></a>
+        <a class="tool-card" data-cat="edit" href="#rotate"><span class="tool-icon violet">⟳</span><strong>Rotate IMAGE</strong><span>Rotate an image to the angle you need.</span></a>
+        <a class="tool-card" data-cat="security" href="#watermark"><span class="tool-icon red">◈</span><strong>Watermark IMAGE</strong><span>Place a text watermark over your image.</span></a>
+        <a class="tool-card" data-cat="security" href="#blur"><span class="tool-icon orange">▧</span><strong>Blur area</strong><span>Blur a selected image area to hide details.</span></a>
+        <a class="tool-card" data-cat="convert" href="#html-to-image"><span class="tool-icon blue">&lt;/&gt;</span><strong>HTML to IMAGE <em>SETUP NEEDED</em></strong><span>Webpage capture needs a browser rendering engine, not configured yet.</span></a>
+      </div>
+      <div class="empty" hidden>No tools in this category.</div>
+    </section>
+    <section id="workspace" class="workspace" hidden>
+      <div class="workspace-heading"><div><span class="eyebrow small">SCOTTIMG TOOL</span><h2 id="work-title">Compress IMAGE</h2><p id="work-description">Choose an image to get started.</p></div><button class="close-work" aria-label="Close tool" type="button">×</button></div>
+      <div class="work-layout"><div class="upload-zone" id="drop-zone"><input id="file-input" type="file" accept="image/*,.html,.htm" hidden><div class="upload-symbol">↑</div><h3>Choose images</h3><p>or drop images here</p><button class="select-button" id="select-file" type="button">Select images</button><small>Images stay on your computer until you run a tool · up to 40 MB</small><div id="file-list" class="file-list"></div></div><div class="settings"><div id="options" class="options"></div><button id="run-tool" class="run-button" type="button" disabled>Process image <span>→</span></button><div id="status" role="status" aria-live="polite"></div><a id="download" class="download" hidden>Download result <span>↓</span></a></div></div>
+    </section>
+    <section id="about" class="trust"><div class="trust-mark">✳</div><div><div class="eyebrow small">YOUR IMAGES, YOUR WAY</div><h2>A simple toolkit for image tasks</h2><p>ScottIMG brings everyday image editing into one friendly workspace. Pick a tool, choose an image and download your result.</p></div><div class="trust-badges"><span>◈&nbsp; Simple tools</span><span>⌁&nbsp; Quick workflow</span><span>♡&nbsp; ScottIMG</span></div></section>
+  </main>
+  <footer><a class="brand" href="#top"><span class="brand-icon">S</span>Scott<span class="brand-light">IMG</span></a><span>© ScottIMG · Your image tools</span><nav><a href="#tools">Tools</a><a href="#about">About</a></nav></footer>
+  <script src="./app.js"></script>
+</body>
+</html>

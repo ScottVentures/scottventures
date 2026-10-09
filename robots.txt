@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /Account/
+Sitemap: https://scottventures.github.io/scottventures/sitemap.xml
